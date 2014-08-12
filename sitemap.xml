@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://LCBecker.github.io/blog/2014/08/12/wordpress-short-codes-for-dummies/</loc>
+    <lastmod>2014-08-12T08:17:27-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://LCBecker.github.io/blog/2014/08/11/hello-world/</loc>
     <lastmod>2014-08-11T20:17:22-04:00</lastmod>
     <priority>0.8</priority>
@@ -11,14 +17,14 @@
   
   <url>
     <loc>http://LCBecker.github.io/blog/archives/</loc>
-    <lastmod>2014-08-11T21:09:56-04:00</lastmod>
+    <lastmod>2014-08-12T11:05:40-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://LCBecker.github.io/</loc>
-    <lastmod>2014-08-11T21:09:56-04:00</lastmod>
+    <lastmod>2014-08-12T11:05:40-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
