@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>From Shakespeare to Java</title>
+  <title>Creating a WordPress Plugin Settings Page - From Shakespeare to Java</title>
   <meta name="author" content="Lori Becker">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://LCBecker.github.io">
+  <link rel="canonical" href="http://LCBecker.github.io/blog/2014/08/13/creating-a-wordpress-plugin-settings-page">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="From Shakespeare to Java" type="application/atom+xml">
@@ -75,15 +75,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/08/13/creating-a-wordpress-plugin-settings-page/">Creating a WordPress Plugin Settings Page</a></h1>
+      <h1 class="entry-title">Creating a WordPress Plugin Settings Page</h1>
     
     
       <p class="meta">
@@ -106,7 +103,7 @@
   </header>
 
 
-  <div class="entry-content"><p>In my last <a href="http://lcbecker.github.io/blog/2014/08/12/wordpress-short-codes-for-dummies/">post</a>, I showed you how to make a WordPress short code plugin. In this post, I&rsquo;ll build upon that short code and teach you how to make a simple settings page.</p>
+<div class="entry-content"><p>In my last <a href="http://lcbecker.github.io/blog/2014/08/12/wordpress-short-codes-for-dummies/">post</a>, I showed you how to make a WordPress short code plugin. In this post, I&rsquo;ll build upon that short code and teach you how to make a simple settings page.</p>
 
 <h3>A Little Backstory</h3>
 
@@ -246,158 +243,16 @@ function sig_options_update() {
 
 <p>Now you know how to make a short code plugin (with or without attributes) and a settings page for it that saves values in the WordPress database. I&rsquo;ve tried to show you how to do this as simply as possible with descriptions that explain exactly what we&rsquo;re doing and why. Hopefully, you can now use this knowledge to create your own plugin and have it do what you want. Happy coding!</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/08/12/wordpress-short-codes-for-dummies/">WordPress Short Codes for Dummies</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Lori Becker</span></span>
 
-<time datetime="2014-08-12T08:17:27-04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>My most recent project as a junior developer intern was to create a WordPress short code and an admin settings page for it. I thought WordPress was supposed to be simple to work with, but as I found out, the resources out there on the subject of short codes and creating settings pages are quite murky if you&rsquo;ve never done WordPress development before. So, in this post, I&rsquo;ll teach you the basics of making a short code plugin.</p>
-
-<h3>Create A Short Code</h3>
-
-<p>The first thing you need to know about making a short code plugin is that WordPress requires a commented heading at the very top of the file and uses it to display information about your plugin when you install/activate it. For this short tutorial, let&rsquo;s say you want to add a signature to the end of your posts, just a nice little &ldquo;Sincerely, Firstname Lastname&rdquo; for a personalized touch. So, create a new PHP file and create the heading:</p>
-
-<pre><code>&lt;?php
-/*
-Plugin Name: Signature    
-Plugin URI: http://ifyouhaveone.com
-Description: Adds a simple signature to your posts and pages.
-Version: 1.0
-Author: YOU!
-Author URI: http://ifyouhaveone.com
-License: GPL or None or Whatever
-*/
-</code></pre>
-
-<p>Now, we create the HTML to add a signature by adding a PHP function in our new file with the nice heading:</p>
-
-<pre><code>function add_signature() {
-    return '&lt;p&gt; Sincerely, Firstname Lastname &lt;/p&gt;';
-}
-</code></pre>
-
-<p>Wow, that was simple. Good. Next, we initialize the short code that will execute this function by calling the WordPress function <code>add_shortcode</code>. This function requires two parameters. The first one is what will be what you want users to type inside short code brackets to run your code. The second is the function to call to actually add the signature. Like so:</p>
-
-<pre><code>add_shortcode('sig', 'add_signature');
-</code></pre>
-
-<p>In this case, typing <code>[sig]</code> on a WordPress post or page will add our signature by calling the <code>add_signature</code> function we just wrote.</p>
-
-<p>Your plugin is almost ready! Feeling adventurous? Want to learn how to make this short code take attributes? Then click <a href="#attr">here</a>.</p>
-
-<p>Otherwise, you probably want to see your plugin in action, just to check if I&rsquo;m totally off my rocker and leading you astray. So, let&rsquo;s finalize our PHP file by adding <code>?&gt;</code> on the very last line. Finally, zip your PHP file in your file manager or via command line for you fancy people out there.</p>
-
-<h3><span id="install">Installing Your Short Code</span></h3>
-
-<p>Log into your WordPress account. From the left-hand menu, select Plugins &ndash;> Add New. Under the Install Plugins header, click on Upload. Click on Choose File, find your zipped short code file on your system, then click install now. If you have the ability to activate your short code after successful installation, do so. Otherwise, from the left-hand menu, select Plugins &ndash;> Installed Plugins. Find the Signature plugin and click Activate. Great! Now, you can use it!</p>
-
-<p>If you are running WordPress locally (such as through XAMPP), the above directions will not work. In this case, simply copy your PHP file and paste it into your WordPress/wp-content/plugins folder. Then from your WordPress account, select Plugins &ndash;> Installed Plugins and activate it.</p>
-
-<p>To use your new short code, simply add <code>[sig]</code> where you&rsquo;d like your signature to appear on a page or post. If you used attributes, you now know the other ways to customize your signature via the short code macro. Congrats!</p>
-
-<h3><span id="attr">Adding Attributes To Your Short Code</span></h3>
-
-<p>Attributes are a nice way to customize your plugin on the fly. For our example, let&rsquo;s say you don&rsquo;t always want your signature to simply be Firstname Lastname. What if you could change that within each post, depending on your mood? Well you can&ndash;with attributes!</p>
-
-<p>In order to allow and get attributes, we need to modify our <code>add_signature</code> function. We need our function to take in an <code>$atts</code> parameter and extract from it some attributes. In our case, we probably want to set the first and last name that&rsquo;s displayed. So, we&rsquo;ll do that by adding attributes to our short code and processing them in a new function we&rsquo;ll call <code>add_atts</code>.</p>
-
-<p>Let&rsquo;s take a look at our new and improved <code>add_signature</code> function:</p>
-
-<pre><code>function add_signature($atts) {
-    extract(shortcode_atts(array(
-        'first' =&gt; '',
-        'last' =&gt; '',
-    ), $atts));
-
-    return '&lt;p&gt; Sincerely, ' . add_atts($first, $last) . '&lt;/p&gt;';
-} 
-</code></pre>
-
-<p>Oh, nice! Inside the array, we declare each possible attribute we could set - either the first name(&lsquo;first&rsquo;) or the last name(&lsquo;last&rsquo;). These attributes can now be used as the variables <code>$first</code> and <code>$last</code>, which we pass as parameters to the function <code>add_atts</code>. Let&rsquo;s see what that function looks like:</p>
-
-<pre><code>function add_atts($first, $last) {
-    $name1;
-    $name2;
-
-    if (empty($first)) {
-        $name1 = "Firstname";
-    } else {
-        $name1 = $first;
-    }
-
-    if (empty($last)) {
-        $name2 = "Lastname";
-    } else {
-        $name2 = $last;
-    }
-
-    return $name1 . " " . $name2;
-} 
-</code></pre>
-
-<p>What does this function do? Well, if we don&rsquo;t specify a first or last attribute in our short code, it will print a default value, in this case &ldquo;Firstname&rdquo; and &ldquo;Lastname&rdquo; respectively. If we specify one or both of them, our attribute values will show up. In other words,</p>
-
-<ul>
-<li><code>[sig]</code> will return Sincerely, Firstname Lastname</li>
-<li><code>[sig first="Happy"]</code> will return Sincerely, Happy Lastname</li>
-<li><code>[sig last="Gilmore"]</code> will return Sincerely, Firstname Gilmore</li>
-<li><code>[sig first="Happy" last="Gilmore"]</code> will return Sincerely, Happy Gilmore</li>
-</ul>
-
-
-<p>Ahh, that&rsquo;s exactly what we wanted! And it&rsquo;s really rather simple! So, now it&rsquo;s time to install this plugin and get it up and running. So, let&rsquo;s finalize our PHP file by adding <code>?&gt;</code> on the very last line. Finally, zip your PHP file in your file manager or via command line for you fancy people out there. Now head over to <a href="#install">Installing Your Short Code</a>.</p>
-
-<h3>Final Thoughts</h3>
-
-<p>So now that you&rsquo;ve made a short code plugin, there&rsquo;s a few other things I should tell you. If you want to publish your plugin with WordPress Plugin Directory, you need a README file with much of the same information as the comments on the top of your PHP file. If you want more on creating short codes, I highly recommend <a href="http://www.smashingmagazine.com/2012/05/01/wordpress-shortcodes-complete-guide/">this site</a> for additional help.</p>
-
-<p>Soon, I will show you how to create a plugin settings page. Stay tuned!</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/08/11/hello-world/">Hello World</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -409,37 +264,44 @@ License: GPL or None or Whatever
   
 
 
-<time datetime="2014-08-11T20:17:22-04:00" pubdate data-updated="true"></time>
-        
-      </p>
+<time datetime="2014-08-13T14:41:18-04:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/wordpress/'>wordpress</a>
+  
+</span>
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>One year ago, I didn&rsquo;t know what a while loop was nor a for loop nor an if-else statement. I thought inheritance was something I&rsquo;d get from my relatives. Classes were what I used to teach. You get the idea. One year ago, I was NOT a programmer.</p>
-
-<p>A lot can happen in one year.</p>
-
-<p>I was accepted into The University of Pennsylvania&rsquo;s Master of Computer and Information Technology program, designed for people with Bachelor&rsquo;s degrees in other areas of study. Considering the fact that I hold a B.S. in Photography and a M.A in Secondary English Education, this was the perfect program for me to learn the ins and outs of computer science.</p>
-
-<p>At the end of my first semester, I was able to code in Scala, Java, and C (and assembly language, if you really want to be technical…which I&rsquo;m sure you do). I declared myself the GUI master after re-creating Frogger using Java Swing. I began adhering to test driven development, laughing as I found my stupid mistakes, cheering as code compiled with no errors, and Valgrind reported no memory leaks.</p>
-
-<p>Flash forward to today. I am nearing the end of my summer internship as a Junior Developer. I&rsquo;ve completed one major project and one major component of a proof-of-concept project. Because of this, I felt compelled to begin writing about what I&rsquo;ve experienced and what I&rsquo;ve learned throughout this adventure into computer science.</p>
-
-<p>Hello world indeed.</p>
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://LCBecker.github.io/blog/2014/08/13/creating-a-wordpress-plugin-settings-page/" data-via="" data-counturl="http://LCBecker.github.io/blog/2014/08/13/creating-a-wordpress-plugin-settings-page/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/08/12/wordpress-short-codes-for-dummies/" title="Previous Post: WordPress Short Codes For Dummies">&laquo; WordPress Short Codes For Dummies</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -468,6 +330,7 @@ License: GPL or None or Whatever
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -482,7 +345,10 @@ License: GPL or None or Whatever
       var disqus_shortname = 'fromshakespearetojava';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://LCBecker.github.io/blog/2014/08/13/creating-a-wordpress-plugin-settings-page/';
+        var disqus_url = 'http://LCBecker.github.io/blog/2014/08/13/creating-a-wordpress-plugin-settings-page/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
