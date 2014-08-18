@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://LCBecker.github.io/blog/2014/08/18/women-in-tech-a-perspective/</loc>
+    <lastmod>2014-08-18T13:43:40-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://LCBecker.github.io/blog/2014/08/14/learning-on-the-job/</loc>
     <lastmod>2014-08-14T13:50:56-04:00</lastmod>
     <priority>0.8</priority>
@@ -29,14 +35,14 @@
   
   <url>
     <loc>http://LCBecker.github.io/blog/archives/</loc>
-    <lastmod>2014-08-18T12:20:49-04:00</lastmod>
+    <lastmod>2014-08-18T15:54:09-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://LCBecker.github.io/</loc>
-    <lastmod>2014-08-18T12:20:49-04:00</lastmod>
+    <lastmod>2014-08-18T15:54:09-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
