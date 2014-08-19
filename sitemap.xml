@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://LCBecker.github.io/blog/2014/08/19/stem-has-an-image-problem/</loc>
+    <lastmod>2014-08-19T08:30:41-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://LCBecker.github.io/blog/2014/08/18/women-in-tech-a-perspective/</loc>
     <lastmod>2014-08-18T13:43:40-04:00</lastmod>
     <priority>0.8</priority>
@@ -35,14 +41,14 @@
   
   <url>
     <loc>http://LCBecker.github.io/blog/archives/</loc>
-    <lastmod>2014-08-18T15:54:09-04:00</lastmod>
+    <lastmod>2014-08-19T11:13:23-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://LCBecker.github.io/</loc>
-    <lastmod>2014-08-18T15:54:09-04:00</lastmod>
+    <lastmod>2014-08-19T11:13:23-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
