@@ -4,7 +4,7 @@
   <title><![CDATA[From Shakespeare to Java]]></title>
   <link href="http://LCBecker.github.io/atom.xml" rel="self"/>
   <link href="http://LCBecker.github.io/"/>
-  <updated>2014-08-29T13:34:42-04:00</updated>
+  <updated>2014-09-05T17:35:25-04:00</updated>
   <id>http://LCBecker.github.io/</id>
   <author>
     <name><![CDATA[Lori Becker]]></name>
@@ -12,6 +12,61 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Learn to Code: Let Me Count the Ways]]></title>
+    <link href="http://LCBecker.github.io/blog/2014/09/04/learn-to-code-let-me-count-the-ways/"/>
+    <updated>2014-09-04T20:40:12-04:00</updated>
+    <id>http://LCBecker.github.io/blog/2014/09/04/learn-to-code-let-me-count-the-ways</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://LCBecker.github.io/images/codeevolution.jpg" title="evolution" alt="evolution"></p>
+
+<h6>The Evolution of Computer Programming Languages by <a href="http://www.flickr.com/photos/dullhunk/4833512699/">dullhunk</a></h6>
+
+<p>Learning to code has become a heated topic these days. I read <a href="http://www.telegraph.co.uk/technology/technology-topics/11064505/Creating-a-British-Mark-Zuckerberg-is-all-about-Education-Education-Education.html">this</a> critical article about the UK&rsquo;s decision to teach children to code as part of the curriculum. Then there was <a href="http://www.slate.com/blogs/future_tense/2014/09/01/labor_day_2014_tech_skills_are_important_in_the_workplace_but_so_are_other.html">this</a> article about how tech skills are overvalued in today&rsquo;s marketplace. And not to be outdone, there was <a href="http://www.theepochtimes.com/n3/927675-computer-science-majors-your-degree-may-not-be-as-valuable-as-you-think/">this</a> about how even if a person does get a degree in computer science, they might not have the skills companies want.</p>
+
+<p>So, is learning to code important? If so, should it be a manditory class in elementary/secondary education? If someone wants to learn to code, should they teach themselves for free using the many sites online? What about attending a coding bootcamp? Does majoring in computer science at a college/university really give someone an edge when looking for a software engineering position?</p>
+
+<h3>Is Coding Important?</h3>
+
+<p>Let&rsquo;s first define &ldquo;important.&rdquo; My definition of important is: useful, bordering on necessary to function in some capacity. In the developed world, I&rsquo;m pretty sure most people would say coding is important. Think of all the things that depend on code for their functionality. Without code, there would be no cell phones and all those apps we love so much. There would be no jobs that use a computer. In our cars, the fancy touchscreens that tell us the traffic on our way to and from work&mdash;gone. The microwave, oven, dishwasher, and wifi connected television would be pretty much useless. The list goes on and on. People who knew how to code made these things possible. It&rsquo;s important that many people know how to code since so much of the convenience of our daily lives depends on it.</p>
+
+<h3>Teaching Children To Code</h3>
+
+<p>The controversy about teaching programming in schools is really a controversy about a broader issue. Is what we teach children in school <em>relevant</em> in today&rsquo;s modern world? Since coding is important in our technology-driven society, it seems <em>relevent</em> to teach it to children. But how many children, and when? Not every child is going to become a software engineer, so some would argue a computer science course should not be a mandatory part of the curriculum. Yet certain other courses are mandatory, like physical education and foreign languages, but children aren&rsquo;t expected to become professional athletes or translators. Those types of courses teach children about healthy lifestyles and other cultures accordingly. Students must take them so they are &ldquo;well-rounded.&rdquo;</p>
+
+<p>I&rsquo;d argue computer science fits into that &ldquo;well-rounded&rdquo; objective. I was never exposed to computer science in school, so it was never on my radar to learn it. However, I was exposed to art, music, keyboard typing, woodworking, sewing, home economics, Spanish, German, and French in my middle school years (6 - 8). Why not add computer science to the list of &ldquo;exposure courses.&rdquo; Students should be exposed to writing code so they know what it&rsquo;s like and what it can do. If students enjoy learning to program, they can take it as an elective in high school or even pursue it in college. Most schools around the world teach history, so students understand how the world they live in came to be. Computer science will also teach them how the world they live in came to be.</p>
+
+<h3>Learning to Code Through Online Tutorials</h3>
+
+<p>The number of websites that teach visitors to code is <em>staggering</em>. There&rsquo;s <a href="http://http://www.codecademy.com/">Codecademy</a>, <a href="http://www.codeschool.com">Code School</a>, and <a href="http://learn.code.org/">Code.org</a> to name a few. There are also free online courses through sites like <a href="https://www.udacity.com/">Udacity</a> and MIT&rsquo;s <a href="https://www.edx.org/">EdX</a> that people can take to learn to code.</p>
+
+<p>Before I started the MCIT program, I thought I&rsquo;d give myself a heads-up before classes began and take the Python course on Codecademy. I went through each cutesy little exercise, but truth be told, I didn&rsquo;t know what I was doing. Nothing really sunk in. I followed the directions, made guesses on the open-ended exercises, but I didn&rsquo;t see the big picture about what I could really do with if statements and while loops. Making a tip calculator was nice, but too simplistic a view of what coding can <em>really</em> do. That&rsquo;s my opinion. Maybe there are others for whom Codecademy opened doors to all the possibilities! It wasn&rsquo;t for me (when I was a beginner). Note: If you already know how to code and want to learn a new programming language or framework, these websites are invaluable!</p>
+
+<p>I believe in a more structured approach to teaching computer science. For the budget-conscious or for those who want to learn to code to move up in their career, taking courses through Udacity or EdX might be the way to go. It requires the user to be motivated, to put in the time to learn (much more time than it will take going through a Codecademy course), and to be ready for some difficult challenges. These courses are more thorough and will make students better prepared should they want to dive deeper into computer science.</p>
+
+<h3>Learning to Code By Going to a Bootcamp</h3>
+
+<p>Coding bootcamps have started cropping up everywhere in the past few years. Click <a href="http://bootcamper.io/t/type/in-class">here</a> to see an exhaustive list of them! Many of these bootcamps are specialized schools, focusing on one programming language or skill. They&rsquo;re quicker than a college education and cheaper than one, too, but students only learn &ldquo;skills employers want.&rdquo; Some of these schools are partnered with companies that will hire graduates of the program - that&rsquo;s great! But are the students coming out of these schools really prepared to work in the tech industry? Do they know about best practices like what data structure to use in certain situations? Do they practice any test driven development? Will they be relevant in later years when iOS has been replaced by a better mobile OS? What if Ruby becomes obsolete? Will the students of these bootcamps be able to adapt?</p>
+
+<p>These bootcamps seem better for meeting short-term goals and for people who need structure to motivate them. So they may be a step up from online courses at Udacity and EdX, but their long-term success remains to be seen.</p>
+
+<h3>Learning To Code By Studying Computer Science</h3>
+
+<p>It&rsquo;s interesting how college computer science courses have come under fire for not providing graduates the skills employers want. Employers want people with a broad assortment of technical know-how. It&rsquo;s not just programming languages, but frameworks, databases, specific operating systems, version control systems, testing applications…the list goes on and on! Do colleges teach these skills or are they really more &ldquo;theory driven?&rdquo;</p>
+
+<p>I can only speak about my experience studying computer science at the graduate level. The courses I&rsquo;ve taken taught me four programming languages, a tad about version control using Git, and test driven development using JUnit for Java. I&rsquo;ve also had courses that taught a lot of theory. I balked at having to take a Discrete Mathematics course. I&rsquo;ll never be writing induction proofs ever again! Yet, the topic of relations came up in my databases course this week and I knew what that really meant because I learned all about it in Discrete Mathematics. Does it really matter that I understand how a relational database works? Maybe not, but it might come in handy somewhere down the line. I didn&rsquo;t think knowing relations was important, but databases today wouldn&rsquo;t be the same without it!</p>
+
+<p>Theory is dismissed as fluff by critics, but they do not seem to understand that theory is what makes <em>reality</em>. People who learn theory can then apply it to real-world situations. Computational theory influenced Alan Turing who, in turn, theorized the Turing machine (which you can now make out of <a href="http://youtu.be/cYw2ewoO6c4">Legos</a>…), and was the basis of all computing today. Brilliant people know both theory and current, practical skills. They can adapt because they see The Big Picture.</p>
+
+<p>Employers may want people with skills, but they also want people with experience. Knowing this fact will help you choose a good college with a good program. Colleges cannot teach students everything for the workplace, because employers vary widely in what they do! That&rsquo;s why it&rsquo;s important to choose a university that balances theory with practical applications and provides internship opportunities to gain experience in the field.</p>
+
+<p>For these reasons, employers may value someone with a college degree in computer science more highly than someone with the same skillset without a degree. Someone who really understands the ins-and-outs of computer science might be able to adapt to changes in technology more easily than someone who has been self-taught. But employers keep their options open. There are many programmers out there without a college education who are doing great work. It&rsquo;s clearly not the end of the world to know how to code and not have a college degree in computer science. However, it may be more difficult to find a programming position considering many large companies require their developers to have a computer science degree.</p>
+
+<h3>Final Thoughts</h3>
+
+<p>Learning to code is important, if only to understand how modern technology works. If you&rsquo;re interested in coding, there are tons of online resources, workshops, bootcamps, and colleges ready to help you on your way. Choose what&rsquo;s best for your style of learning and level of motivation. There is no one right way to learn how to code. There&rsquo;s only <em>your</em> way.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Collaboration Optional]]></title>
