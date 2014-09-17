@@ -4,7 +4,7 @@
   <title><![CDATA[From Shakespeare to Java]]></title>
   <link href="http://LCBecker.github.io/atom.xml" rel="self"/>
   <link href="http://LCBecker.github.io/"/>
-  <updated>2014-09-05T17:35:25-04:00</updated>
+  <updated>2014-09-17T16:13:30-04:00</updated>
   <id>http://LCBecker.github.io/</id>
   <author>
     <name><![CDATA[Lori Becker]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The Language Wars]]></title>
+    <link href="http://LCBecker.github.io/blog/2014/09/17/the-language-wars/"/>
+    <updated>2014-09-17T09:05:46-04:00</updated>
+    <id>http://LCBecker.github.io/blog/2014/09/17/the-language-wars</id>
+    <content type="html"><![CDATA[<p><img class="left" src="http://LCBecker.github.io/images/language.jpg" title="programming language cartoon" alt="programming language cartoon"></p>
+
+<h6>Essays by <a href="https://www.flickr.com/photos/markuz/5476354835/in/photolist-9kVKuX-DPuZr-cyzFqh-dgBX5h-dcn2NC-bk3mFf-2CcMj-73wwvy-8HqhkF-nPej2Z-4auAXX-4auvCv-4aux7x-4auEfe-4auxDT-4auM64-4auQa8-4auNpa-nuV3GR-nMpVwR-nuX4Pf-nuVMGg-nuX4SS-nuVMg6-nPcfYZ-nuY9BP-nPeCHB-nuV58X-nMpVpr-nMpURT-nMn1JE-nuV42D-nuXEX3-nKp6ch-nuVMT8-nMePeN-nuVMap-nKngMu-nPeCEa-nuXyMe-nKnid5-nPeCYX-nuV3Mv-nMn2eC-nuXEoY-nuY9yH-nKpFhS-nMpnLL-nKnhPj-nuXyh6">Marco Antonio Islas Cruz</a></h6>
+
+<p>There are <a href="http://en.wikipedia.org/wiki/Lists_of_programming_languages">thousands</a> of programming languages. Each language has its strengths and weaknesses, its own special qualities, and some have very specific purposes.</p>
+
+<p>After reading <a href="http://www.itworld.com/career/436261/college-students-learning-cobol-make-more-money">this</a> article about a Texas university&rsquo;s graduates getting a $10,000 bump in salary for taking an elective course on COBOL, I started thinking about what programming languages <em>really</em> matter in industry and beyond.</p>
+
+<p>According to <a href="http://spectrum.ieee.org/computing/software/top-10-programming-languages">IEEE</a>, Java, C, and C++ are the top 3 programming languages because they are widely used in web, mobile, desktop and embedded development. Python, which has a steadily growing fanbase, is only in 5th place, probably due to the fact that it&rsquo;s not used for mobile or embedded development. This is interesting, considering <a href="http://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-us-universities/fulltext">Python</a> is currently the most popular language being taught in introductory computer science courses. Does this mean more companies will adapt Python as their primary development language as the graduates look for jobs related to their &ldquo;language of choice&rdquo;?</p>
+
+<p>I put &ldquo;language of choice&rdquo; in quotes for a reason (I&rsquo;m not in this group of <a href="http://www.unnecessaryquotes.com/">people</a>). My hunch is that the level of proficiency of a programming language determines the developer&rsquo;s preference for that language. If they don&rsquo;t know it well, it&rsquo;s not going to be their favorite, even if it might be better for the project at hand. (As it turns out, this hunch is seemingly <a href="http://www.reddit.com/r/learnprogramming/comments/2gos1e/is_your_preferred_programming_language_the_same/">incorrect</a>. Thank you, Reddit responders.)</p>
+
+<p>That leads me to believe that out of the thousands of programming languages currently out there, the ones most utilized in industry may not be the optimal ones. They&rsquo;re just the standard. Java might be the dominant language, but some other language out there might be more efficient and easier to use to do the same tasks! Those other languages are just not well-known by a significant number of people. And of course, companies are notoriously resistant to <a href="http://thenextweb.com/dd/2014/02/27/web-2-0-languages-david-hasselhoff-common/">change</a>.</p>
+
+<p>In the meanwhile, developers will continue to argue about the <em>superior</em> programming language(Python! No, Java! No, Go! No, C#!). They will have conferences championing the accomplishments of their language and what&rsquo;s been created with them. But remember, there are a lot of programming languages out there just waiting to be discovered, learned, and used to build really amazing things! They may just become one of the standard programming languages of the future&hellip;</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Learn to Code: Let Me Count the Ways]]></title>
