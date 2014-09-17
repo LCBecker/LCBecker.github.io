@@ -6,7 +6,7 @@ comments: true
 categories: programming languages
 ---
 {% img left /images/language.jpg 'programming language cartoon' 'programming language cartoon' %}
-###### Essays by [Marco Antonio Islas Cruz](https://www.flickr.com/photos/markuz/5476354835/in/photolist-9kVKuX-DPuZr-cyzFqh-dgBX5h-dcn2NC-bk3mFf-2CcMj-73wwvy-8HqhkF-nPej2Z-4auAXX-4auvCv-4aux7x-4auEfe-4auxDT-4auM64-4auQa8-4auNpa-nuV3GR-nMpVwR-nuX4Pf-nuVMGg-nuX4SS-nuVMg6-nPcfYZ-nuY9BP-nPeCHB-nuV58X-nMpVpr-nMpURT-nMn1JE-nuV42D-nuXEX3-nKp6ch-nuVMT8-nMePeN-nuVMap-nKngMu-nPeCEa-nuXyMe-nKnid5-nPeCYX-nuV3Mv-nMn2eC-nuXEoY-nuY9yH-nKpFhS-nMpnLL-nKnhPj-nuXyh6) ######
+###### Essays - a cartoon by [Marco Antonio Islas Cruz](https://www.flickr.com/photos/markuz/5476354835/in/photolist-9kVKuX-DPuZr-cyzFqh-dgBX5h-dcn2NC-bk3mFf-2CcMj-73wwvy-8HqhkF-nPej2Z-4auAXX-4auvCv-4aux7x-4auEfe-4auxDT-4auM64-4auQa8-4auNpa-nuV3GR-nMpVwR-nuX4Pf-nuVMGg-nuX4SS-nuVMg6-nPcfYZ-nuY9BP-nPeCHB-nuV58X-nMpVpr-nMpURT-nMn1JE-nuV42D-nuXEX3-nKp6ch-nuVMT8-nMePeN-nuVMap-nKngMu-nPeCEa-nuXyMe-nKnid5-nPeCYX-nuV3Mv-nMn2eC-nuXEoY-nuY9yH-nKpFhS-nMpnLL-nKnhPj-nuXyh6) ######
 
 
 There are [thousands](http://en.wikipedia.org/wiki/Lists_of_programming_languages) of programming languages. Each language has its strengths and weaknesses, its own special qualities, and some have very specific purposes.
