@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Refactoring | From Shakespeare to Java]]></title>
+  <link href="http://LCBecker.github.io/blog/categories/refactoring/atom.xml" rel="self"/>
+  <link href="http://LCBecker.github.io/"/>
+  <updated>2014-09-19T10:09:46-04:00</updated>
+  <id>http://LCBecker.github.io/</id>
+  <author>
+    <name><![CDATA[Lori Becker]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Coding on the Edge - the Failure to Use Best Practices]]></title>
+    <link href="http://LCBecker.github.io/blog/2014/09/19/coding-on-the-edge-the-failure-to-use-best-practices/"/>
+    <updated>2014-09-19T09:17:50-04:00</updated>
+    <id>http://LCBecker.github.io/blog/2014/09/19/coding-on-the-edge-the-failure-to-use-best-practices</id>
+    <content type="html"><![CDATA[<p><img class="center" src="/images/badcode.jpg" title="&lsquo;bad code cartoon&rsquo; &lsquo;bad code cartoon&rsquo;" ></p>
+
+<h6>wtf - code quality measurement by <a href="https://flic.kr/p/4qquBv">smitty42</a></h6>
+
+<h3>Some Background</h3>
+
+<p>For two semesters, my programming professor (then head of the University of Pennsylvania&rsquo;s MCIT program) taught me a number of Agile techniques &ndash; unit testing, coding standards, refactoring, TDD, and pair programming. Since I hadn&rsquo;t really done any programming before entering MCIT, I didn&rsquo;t have any bad habits that needed to be unlearned. I do know that I did not follow TDD as well as I should (write tests before writing the method? Impossible!), but I slowly adapted the right way to do TDD.</p>
+
+<p>During my summer internship, I was surprized to learn that no one seemed to write any tests for their code. To be fair, I didn&rsquo;t either, because I didn&rsquo;t know exactly how to test HTML and JavaScript without actually starting up the website and verifying its look and behavior. My boss exclaimed, &ldquo;People don&rsquo;t actually do test driven development in industry.&rdquo;</p>
+
+<p>I&rsquo;m currently taking a software engineering course, which focuses on how to measure if a piece of code is &ldquo;good.&rdquo; It&rsquo;s an entire class about software development best practices. Many articles I&rsquo;ve had to read for the course all have an interesting theme through them. &ldquo;But [author&rsquo;s name here], what if my company doesn&rsquo;t practice Agile development?&rdquo; The answer: Do it anyway.</p>
+
+<h3>Some Statistics</h3>
+
+<p>I wanted to know if my former boss was right. Does industry NOT follow TDD? So, I found a 2013 survey called <a href="http://stateofagile.com/8th-annual-state-of-agile-form/">State of Agile</a> from VersionOne. Now given, VersionOne makes a product to help companies adapt Agile techniques, so I&rsquo;d say the results are skewed when the report says 88% of respondants say their company practices Agile development. But what&rsquo;s more interesting is what techniques those companies that do Agile development actually use:</p>
+
+<ul>
+<li>85% have a Daily Standup meeting.</li>
+<li>72% utilize unit testing.</li>
+<li>47% refactor their code.</li>
+<li>38% practice Test Driven Development.</li>
+<li>30% do pair programming.</li>
+</ul>
+
+
+<p>So it seems my former boss was right! TDD is not popular, despite it&rsquo;s obvious benefits (&ldquo;Using TDD, you are never far from working code…&rdquo;).</p>
+
+<h3>Some Inferences</h3>
+
+<p>The statistics are what each company openly practices in terms of Agile techniques. That doesn&rsquo;t mean that their developers aren&rsquo;t doing things like refactoring and TDD on their own! After all, these developers are supposed to be professionals. They probably do incorporate best practices to do their work (at least, we can hope so!).</p>
+
+<p>We can also infer that some Agile practices are more beneficial than others. While I have done pair programming in the past, it&rsquo;s not a big deal if a company doesn&rsquo;t embrace that technique. It&rsquo;s great to get a new employee up to speed on a piece of code and add new functionality to it, but it&rsquo;s not a necessity.</p>
+
+<p>Needless to say, I am a firm believer of good practices. Anyone who has me on their team will know that the code I produce has been tested, refactored, and written with a great deal of attention, care, and dedication.</p>
+
+<h3>The Takeaway</h3>
+
+<p>All developers should be aware of key Agile techniques and incorporate them into how they code. Not testing or refactoring your code is a very, VERY bad idea. Those 60+ hour weeks might very well be the result of poor coding practices, which, as <em>Business Insider</em> explains, may be driving you and your co-workers <a href="http://www.businessinsider.com/syndromes-drive-coders-crazy-2014-3">crazy</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>
