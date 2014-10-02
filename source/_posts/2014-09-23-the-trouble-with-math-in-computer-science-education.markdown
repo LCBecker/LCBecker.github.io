@@ -6,7 +6,7 @@ comments: true
 categories: mathematics teaching education college
 ---
 
-{% img left /images/math.jpg 'math cartoon' 'math cartoon' %}
+{% img center /images/math.jpg 'math cartoon' 'math cartoon' %}
 
 
 Mathematics made computer science possible. From the Turing-Church papers to Von Neumann architecture, many of the things we take for granted are the direct result of some mathematician's discoveries.
