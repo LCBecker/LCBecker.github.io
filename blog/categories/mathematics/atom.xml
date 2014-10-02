@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Mathematics | From Shakespeare to Java]]></title>
   <link href="http://LCBecker.github.io/blog/categories/mathematics/atom.xml" rel="self"/>
   <link href="http://LCBecker.github.io/"/>
-  <updated>2014-10-01T22:02:34-04:00</updated>
+  <updated>2014-10-01T22:04:43-04:00</updated>
   <id>http://LCBecker.github.io/</id>
   <author>
     <name><![CDATA[Lori Becker]]></name>
@@ -18,9 +18,7 @@
     <link href="http://LCBecker.github.io/blog/2014/09/23/the-trouble-with-math-in-computer-science-education/"/>
     <updated>2014-09-23T21:04:27-04:00</updated>
     <id>http://LCBecker.github.io/blog/2014/09/23/the-trouble-with-math-in-computer-science-education</id>
-    <content type="html"><![CDATA[<p><img class="right" src="/images/math.jpeg" title="&lsquo;math cartoon&rsquo; &lsquo;math cartoon&rsquo;" ></p>
-
-<p>Mathematics made computer science possible. From the Turing-Church papers to Von Neumann architecture, many of the things we take for granted are the direct result of some mathematician&rsquo;s discoveries.</p>
+    <content type="html"><![CDATA[<p>Mathematics made computer science possible. From the Turing-Church papers to Von Neumann architecture, many of the things we take for granted are the direct result of some mathematician&rsquo;s discoveries.</p>
 
 <p>University computer science programs require students to take math courses. To some extent, this is a reasonable requirement. Learning about DFAs and NFAs are the underpinning of creating compilers. Learning about relations is important in understanding database design. Clearly, mathematics has had a profound influence over computer science.</p>
 
