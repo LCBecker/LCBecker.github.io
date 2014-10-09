@@ -4,7 +4,7 @@
   <title><![CDATA[From Shakespeare to Java]]></title>
   <link href="http://LCBecker.github.io/atom.xml" rel="self"/>
   <link href="http://LCBecker.github.io/"/>
-  <updated>2014-10-01T22:51:49-04:00</updated>
+  <updated>2014-10-09T11:54:41-04:00</updated>
   <id>http://LCBecker.github.io/</id>
   <author>
     <name><![CDATA[Lori Becker]]></name>
@@ -12,6 +12,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[From Shakespeare to Java]]></title>
+    <link href="http://LCBecker.github.io/blog/2014/10/08/from-shakespeare-to-java/"/>
+    <updated>2014-10-08T21:56:58-04:00</updated>
+    <id>http://LCBecker.github.io/blog/2014/10/08/from-shakespeare-to-java</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://LCBecker.github.io/images/engineeringbanner.jpg" title="Penn Engineering" alt="Penn Engineering"></p>
+
+<p>A little more than a ago, I was a high school English teacher. I walked around a classroom supervising activities to help my students grasp key concepts of reading, writing, and the &ldquo;collective human experience.&rdquo; And yes, I did teach Shakespeare (&lsquo;Romeo and Juliet&rsquo; and &lsquo;Hamlet&rsquo; to be exact).</p>
+
+<p><strong>So how does a high school English teacher become a software engineer?</strong></p>
+
+<p>Three events happened simultaneously back in April 2013. The first was hitting my 5 year mark as a teacher and not having a permanent position. For 5 years, I had worked in 6 school districts, but the positions were always temporary. School districts were receiving less funding from the state, causing districts to remove teaching positions in favor of larger class sizes. Other districts were laying off teachers in the thousands, causing massive competition for any permanent position out there. I was frustrated. I was a great teacher, I loved my subject, and I loved the profession. But the opportunities were drying up more and more every day and my future was frighteningly uncertain.</p>
+
+<p>The second event had been mulling around for a while, but became a beacon of hope in April. My best friend kept telling me I&rsquo;d make a fantastic software developer. He tried to convince me that computer science <em>is</em> a creative endeavor. He pointed out that I love puzzles (it&rsquo;s true - I do crosswords and logic puzzles on my smartphone all the time) and that writing code is like solving puzzles all day. The more he talked about it, the more interested I became. I considered teaching myself how to code using online resources or attending coding workshops, but then…</p>
+
+<p>My best friend talked to one of his co-workers, who just happenend to have been an English major who went through the MCIT program at the University of Pennsylvania and received a Masters in computer science. It turned out the MCIT program was one of the few in the country that would take students from other disciplines and teach them all the fundamentals of computer science (and then some). After I heard about MCIT, I was pretty convinced that this was an opportunity of a lifetime. I didn&rsquo;t really know if I was going to like programming. But sometimes other people see more in us than we can see in ourselves. So, I applied to the MCIT program…and got accepted!</p>
+
+<p>Today, I know my best friend was right…perhaps too right. Programming is a creative process. It is a long string of puzzles (&ldquo;How do I make the computer do <em>this</em>?&rdquo;). It is challenging, rewarding, frustrating, and awesome all at the same time.</p>
+
+<p>My experience transitioning from English teacher to software engineer (or as I like to say, from Shakespeare to Java) is why I am such an advocate for teaching others about the field of computer science. I think that despite our leaps forward in technology and that most of us use computers and smartphones daily, we are extremely disconnected from what makes all of our electronics&#8217; functionality possible. The younger generation has to actively seek out what computer science is, because it is rarely taught in the public school system. I hope that in the future, more people are at least somewhat knowledgable about programming, even if it is at a very basic level.</p>
+
+<p>So what does the future hold for an English teacher turned software engineer? I don&rsquo;t know, but I can&rsquo;t wait to find out.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The Trouble With Math in Computer Science Education]]></title>

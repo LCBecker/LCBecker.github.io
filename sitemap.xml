@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://LCBecker.github.io/blog/2014/10/08/from-shakespeare-to-java/</loc>
+    <lastmod>2014-10-08T21:56:58-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://LCBecker.github.io/blog/2014/09/23/the-trouble-with-math-in-computer-science-education/</loc>
     <lastmod>2014-09-23T21:04:27-04:00</lastmod>
     <priority>0.8</priority>
@@ -77,14 +83,14 @@
   
   <url>
     <loc>http://LCBecker.github.io/blog/archives/</loc>
-    <lastmod>2014-10-01T22:51:49-04:00</lastmod>
+    <lastmod>2014-10-09T11:54:41-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://LCBecker.github.io/</loc>
-    <lastmod>2014-10-01T22:51:49-04:00</lastmod>
+    <lastmod>2014-10-09T11:54:41-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
