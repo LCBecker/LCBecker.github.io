@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Security | From Shakespeare to Java]]></title>
   <link href="http://LCBecker.github.io/blog/categories/security/atom.xml" rel="self"/>
   <link href="http://LCBecker.github.io/"/>
-  <updated>2014-12-22T13:22:00-05:00</updated>
+  <updated>2014-12-22T13:23:21-05:00</updated>
   <id>http://LCBecker.github.io/</id>
   <author>
     <name><![CDATA[Lori Becker]]></name>
@@ -18,11 +18,7 @@
     <link href="http://LCBecker.github.io/blog/2014/12/22/were-not-serious-about-software-security/"/>
     <updated>2014-12-22T11:22:10-05:00</updated>
     <id>http://LCBecker.github.io/blog/2014/12/22/were-not-serious-about-software-security</id>
-    <content type="html"><![CDATA[<p><img class="center" src="/images/security.jpg" title="&lsquo;Security&rsquo; &lsquo;Security&rsquo;" ></p>
-
-<h6>Photo courtesy of <a href="http://www.perspecsys.com">www.perspecsys.com</a></h6>
-
-<h3>Lulled Into A False Sense of Security</h3>
+    <content type="html"><![CDATA[<h3>Lulled Into A False Sense of Security</h3>
 
 <p>It seems to happen every day and the public is appalled for about one second before it&rsquo;s back to business as usual. I&rsquo;m talking about hacking, not in the &ldquo;finding creative solutions&rdquo; sense, but the finding and exploiting of software vulnerabilities. Sony got hacked. Private e-mails and documents were released in retaliation for an &ldquo;unflattering&rdquo; movie about North Korea (supposedly). In past years, the big box stores have been hacked again and again. Customer credit card numbers were stolen. Still, people continue to swipe their credit cards at Target and Home Depot without blinking an eye.</p>
 
