@@ -1,0 +1,29 @@
+---
+layout: post
+title: "We're Not Serious About Software Security"
+date: 2014-12-22 11:22:10 -0500
+comments: true
+categories: security
+---
+{% img center /images/security.jpg 'Security' 'Security' %}
+###### Photo courtesy of [www.perspecsys.com](http://www.perspecsys.com) #######
+
+### Lulled Into A False Sense of Security ###
+It seems to happen every day and the public is appalled for about one second before it's back to business as usual. I'm talking about hacking, not in the "finding creative solutions" sense, but the finding and exploiting of software vulnerabilities. Sony got hacked. Private e-mails and documents were released in retaliation for an "unflattering" movie about North Korea (supposedly). In past years, the big box stores have been hacked again and again. Customer credit card numbers were stolen. Still, people continue to swipe their credit cards at Target and Home Depot without blinking an eye.
+
+We're not serious about software security. The public doesn't care enough to change their habits and pressure companies to store their data safely and securely. And what can these companies do when they're at the mercy of the software company that developed the software they use?  Most software companies don't seem to care about exploits, unless it comes to their legal team, in which case, they've already placed a disclaimer that using this software is at your own risk. So, these breaches seem to be par for the course. No one really takes responsibility. Another day, another hack.
+
+### Universities: Software Security is a Choice, Not a Requirement ###
+This semester, I took a software engineering course which centered around the internal and external metrics of software quality as defined by ISO-9126. One of the external metrics was security. For software to be considered secure, it has to verify data is only accessible by authorized users and that code cannot be manipulated by outside sources. My professor showed us a few ways we could exploit programs in Java. Suddenly, everyone in the class realized how all the programs we'd written throughout our careers as students (and possibly during our internships) were horribly insecure (Thanks, Java. Why SecurityManager is disabled by default, I'll never understand). And this was just in Java. What back doors exist in other programming languages?
+
+Most university computer science programs have a computer and network security course. Unfortunately, it's usually an elective rather than a required course. Just do a Google search for "required computer science courses". You'll see a list of university web sites, all of which list computer security as an elective course. 
+
+Digging further, what do students who take these computer security courses actually learn? Examining a wide variety of universities, the descriptions of these courses vary greatly. Some, like the [University of Colorado Boulder](http://www.colorado.edu/catalog/2013-14/courses/engr/b-csci/4133-security-laboratory) give students hands-on experiences with finding and exploiting vulnerabilities. Right next door, [Colorado State University's](http://www.cs.colostate.edu/~cs556/) computer security course states, "In this course, we will begin by investigating some of the security measures that can be employed to safeguard information. For the most part we will look into the theory that goes into designing these measures rather than studying security tools and techniques. This is primarily because there are too many of those tools out there and they are changing frequently." Does a course that focuses more on theory than practice do a disservice to future software developers? Will Colorado State University's students create programs be as secure as say, the ones created by UC Boulder students who took Security Laboratory?
+
+### Untraditional Routes: Learn To Code, Not Learn To Code Securely
+More and more people are taking different, untraditional routes into computer science. While it seems that teaching students how to write secure software is optional at the university level, these other paths into computer science seem to offer no instruction about writing secure software. Take, for example, the well-respected Flatiron School in New York. Nowhere in their [curriculum](http://prework.flatironschool.com/web-development/) do they discuss security. The focus is on learning new technologies and writing code that works. Their graduates go off to work at well-known companies, just like university students, none-the-wiser about writing secure code.
+
+Many other people are taking advantage of free online courses to teach themselves how to code. They could take this Coursera [course](https://www.coursera.org/course/softwaresec) on computer security, but the recommended background is for someone with a solid foundation in computer science, not someone trying to learn computer science on their own. I'll bet most self-learners won't be considering this course. The question is, will those already entrenched in computer science be motivated to take this course?
+
+### Software Security is an Afterthought ###
+Without making software security a priority in our educational institutions and for hiring qualified software engineers, software will continue to be vulnerable to many preventable attacks. It's impossible to have an inpenetrable program. But there is so much we could do to make software more secure. If only there was some initiative on behalf of universities and other computer science-based schools to produce software developers who are knowledgeable in writing programs with some basic security measures in mind. And there needs to be more initiative on the part of companies to not only hire developers that are qualified to write working, secure code, but to take responsibility when their software leaks out sensitive information. As more and more of our lives become digitized, security should become a top priority, not an afterthought.
