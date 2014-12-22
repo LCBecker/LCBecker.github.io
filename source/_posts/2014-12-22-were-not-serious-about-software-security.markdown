@@ -5,8 +5,6 @@ date: 2014-12-22 11:22:10 -0500
 comments: true
 categories: security
 ---
-{% img center /images/security.jpg 'Security' 'Security' %}
-###### Photo courtesy of [www.perspecsys.com](http://www.perspecsys.com) #######
 
 ### Lulled Into A False Sense of Security ###
 It seems to happen every day and the public is appalled for about one second before it's back to business as usual. I'm talking about hacking, not in the "finding creative solutions" sense, but the finding and exploiting of software vulnerabilities. Sony got hacked. Private e-mails and documents were released in retaliation for an "unflattering" movie about North Korea (supposedly). In past years, the big box stores have been hacked again and again. Customer credit card numbers were stolen. Still, people continue to swipe their credit cards at Target and Home Depot without blinking an eye.
