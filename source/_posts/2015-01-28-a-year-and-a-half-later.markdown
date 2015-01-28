@@ -5,7 +5,7 @@ date: 2015-01-28 16:02:00 -0500
 comments: true
 categories: personal
 ---
-![My favorite poster in Towne Building](../images/comfortzone.jpg)
+![My favorite poster in Towne Building]( /images/comfortzone.jpg)
 
 I've started my last course before I graduate in May. Of course, in typical Lori-fashion, I decided to take one of the hardest courses the computer science department at UPenn has to offer: CIS 555 - Internet and Web Systems. Why did I want to take such a hard course? Why not just breeze my way through some easier class instead? Because this class is a true test of all I've learned in the past year and a half. It will turn all of the things I've studied and make me apply them in challenging, new ways.
 
