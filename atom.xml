@@ -4,7 +4,7 @@
   <title><![CDATA[From Shakespeare to Java]]></title>
   <link href="http://LCBecker.github.io/atom.xml" rel="self"/>
   <link href="http://LCBecker.github.io/"/>
-  <updated>2015-03-23T13:31:33-04:00</updated>
+  <updated>2015-05-04T17:20:27-04:00</updated>
   <id>http://LCBecker.github.io/</id>
   <author>
     <name><![CDATA[Lori Becker]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Graduation in T-Minus 12 Days]]></title>
+    <link href="http://LCBecker.github.io/blog/2015/05/04/graduation-in-t-minus-12-days/"/>
+    <updated>2015-05-04T16:46:46-04:00</updated>
+    <id>http://LCBecker.github.io/blog/2015/05/04/graduation-in-t-minus-12-days</id>
+    <content type="html"><![CDATA[<p><img src="http://LCBecker.github.io/images/2015grad.jpg" alt="The Graduate" />
+It&rsquo;s been a very long time since I&rsquo;ve updated this blog, so let me fill you in:</p>
+
+<p>CIS 555: I have nearly completed one of the hardest courses in computer science at The University of Pennsylvania. And I&rsquo;ve done really well, even though I totally struggled with some of the assignments (we have to implement what now?). Struggling is good. Struggling means you&rsquo;re learning something. In 4 days, my group and I will demo our search engine that we wrote from the ground up. If we ever get it working in full (fingers crossed!). I was assigned to do the Search Engine and web interface, which is great for me. I like doing a litte bit of everything. I designed the front-end and I do a great job of communicating with databases in AWS to get results, rank them, and display them. I&rsquo;m proud of my code. It&rsquo;s tested, commented, and it works!</p>
+
+<p>Philly Women In Tech Conference: I went to it after I snagged a free ticket. I&rsquo;m really glad I didn&rsquo;t pay for that ticket, because the conference was terrible. There are a lot of women who want to be grouped into the &ldquo;Women In Tech&rdquo; label because, let&rsquo;s face it, that&rsquo;s a pretty sweet label to have. I do believe, however, that women who work for a tech company in a capacity other than engineering (say: an HR rep for a tech company) are NOT &ldquo;Women In Tech.&rdquo; The conference was more about entrepreneurship than technical skills or the climate in the tech industry in Philadelphia. And the women who attended didn&rsquo;t seem like they knew anything about tech at all. One of the sponsors of the conference, TechGirlz, an organization that tries to encourage young girls to go into tech, is stating that tech is not all about knowing how to code. It really bothers me that an organization that should be promoting computer science is now undermining it as a way to attract a wider audience. Tech is definitely about coding and coding is fun!</p>
+
+<p>Graduating in T-12 days: I have my cap and gown. On a daily basis, I get e-mails congratulating me on my achievement and telling me all the last-minute wrap-ups I need to do before Commencement. It seems surreal. I haven&rsquo;t actually started my job search yet. People keep telling me about opportunities and I&rsquo;m just not ready to apply yet. I&rsquo;m still finishing up CIS 555 - that&rsquo;s my main priority. Then I need a little rest because I&rsquo;ve been on edge with due dates pounding me every week for the past 2 years. I&rsquo;ll regain a little sanity and then begin applying to my future employer (whoever that may be).</p>
+
+<p>I have nothing but wonderful things to say about the MCIT program and my professors who have helped me along the way. I am honored to have been chosen for the program and so happy to have successfully completed it. I&rsquo;m excited to see where my degree will take me!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Reinventing the Wheel (or Web Server)]]></title>
