@@ -4,7 +4,7 @@
   <title><![CDATA[From Shakespeare to Java]]></title>
   <link href="http://LCBecker.github.io/atom.xml" rel="self"/>
   <link href="http://LCBecker.github.io/"/>
-  <updated>2015-05-04T17:23:59-04:00</updated>
+  <updated>2015-07-20T17:37:11-04:00</updated>
   <id>http://LCBecker.github.io/</id>
   <author>
     <name><![CDATA[Lori Becker]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[I Graduated. Now What?]]></title>
+    <link href="http://LCBecker.github.io/blog/2015/07/20/i-graduated-now-what/"/>
+    <updated>2015-07-20T16:57:04-04:00</updated>
+    <id>http://LCBecker.github.io/blog/2015/07/20/i-graduated-now-what</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://LCBecker.github.io/images/PennDiploma.jpg" title="UPenn Diploma" alt="UPenn Diploma"></p>
+
+<p>It&rsquo;s official. I&rsquo;ve earned my Master&rsquo;s in Computer and Information Technology. It&rsquo;s a wonderful and strange feeling. I certainly went out of my comfort zone, learned a new skill set, and loved every minute of it. But of course, I&rsquo;m not done learning yet.</p>
+
+<p>While I&rsquo;ve been job hunting, I&rsquo;ve been trying to learn new programming languages while strengthening the ones I know. To be honest, there really isn&rsquo;t one aspect of development that I love over another. I love coding the full stack. I honestly don&rsquo;t care what programming language I&rsquo;m using either (well&hellip;as long as it&rsquo;s not C). I stumbled upon <a href="www.codeeval.com">CodeEval</a>, a website full of programming problems. I decided to do at least one problem each day. At first, I was only doing the problems in Java since that&rsquo;s my strongest language. According to my CodeEval <a href="https://www.codeeval.com/profile/LBecker/">profile</a>, I&rsquo;m one of the top 15% Java developers sitewide (out of 6,000+)! Then I realized this would be a great way to get better at coding in other languages I&rsquo;m interested in. So besides a not-so-little side project in Python/Flask, I decided to start solving CodeEval problems in Python. It&rsquo;s taught me a lot of the ins-and-outs of Python. I really get a kick out of successfully solving some of these intricate coding problems!</p>
+
+<p>As I said earlier, I&rsquo;m not partial to front-end or back-end development. I truly enjoy doing both. While looking at job descriptions, it seemed to me that many companies might actually benefit from having someone like me - someone who can code Java one day, and JavaScript the next. JavaScript and I have a funny history. Sometimes I love it (you know, when it works) and sometimes I hate it (let&rsquo;s face it - sometimes JS forces you to write ugly code). But with all the frameworks to choose from, JavaScript can be tolerable, even enjoyable. I enrolled in <a href="http://www.freecodecamp.com">Free Code Camp</a>. Supposedly, it takes a year to complete, but I&rsquo;m already more than half way through and I just started 2 weeks ago. It was a good brush-up on HTML, CSS, Bootstrap, and jQuery. I completed all the JavaScript lessons (through <a href="http://www.codecademy.com">Codecademy</a>) and now I&rsquo;m doing JavaScript &ldquo;bonfires&rdquo; (through Free Code Camp): programming problems to get you familiar with common built-in functions like Array.split(), filter, etc.</p>
+
+<p>As I started completing the JavaScript bonfires, I thought to myself, &ldquo;Hmm, wouldn&rsquo;t it be fun to try to solve CodeEval problems in JavaScript?&rdquo;. So I tried&hellip;and I was able to do it! I&rsquo;m the only one in Philadelphia who has solved any CodeEval problem in JavaScript! <strong>I AM THE FIRST!</strong> Currently, I&rsquo;m in 11th place on the Philadelphia All-Time Leaderboard. I plan on getting into the Top 10 this week.</p>
+
+<p>So that&rsquo;s what I&rsquo;ve been doing since I graduated: Improving. Job hunting. I hope the job hunting will end soon, though. As much fun as I&rsquo;m having learning on my own, it&rsquo;s nothing compared to when you&rsquo;re completing a <em>real</em> project with <em>real</em> requirements for a <em>real</em> client. Hopefully my next blog post will be about my first day as a software engineer! Until next time!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Graduation in T-Minus 12 Days]]></title>
