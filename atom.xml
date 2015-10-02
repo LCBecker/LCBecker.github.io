@@ -4,7 +4,7 @@
   <title><![CDATA[From Shakespeare to Java]]></title>
   <link href="http://LCBecker.github.io/atom.xml" rel="self"/>
   <link href="http://LCBecker.github.io/"/>
-  <updated>2015-07-20T17:37:11-04:00</updated>
+  <updated>2015-10-01T20:48:49-04:00</updated>
   <id>http://LCBecker.github.io/</id>
   <author>
     <name><![CDATA[Lori Becker]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[It's My First Day]]></title>
+    <link href="http://LCBecker.github.io/blog/2015/10/01/its-my-first-day/"/>
+    <updated>2015-10-01T20:17:11-04:00</updated>
+    <id>http://LCBecker.github.io/blog/2015/10/01/its-my-first-day</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m writing this blog post for women who aspire to be software engineers. What is it like on your first day on the job as a software engineer? This is my experience:</p>
+
+<h4>EXCITING!</h4>
+
+<p>I worked hard to get here. I thought graduation day was great, but my first day on the job was truly the reward. Walking into that office this morning was a very proud moment! I love all the firsts of a first day: a new computer, a new workspace, a new project, meeting new people, getting that badge to get in and out of the building (with my face on it!). It was very exciting and made the day fly by!</p>
+
+<h4>CONFUSED!</h4>
+
+<p>I&rsquo;m pretty sure that from large corporation to small startup, acronyms are consistently thrown around. On my first day, as we did our daily standup meeting and then a &ldquo;here&rsquo;s an overview of this project,&rdquo; all I could think about was counting up all the acronyms. Every department has an acronym, our project title is an acronym, and let&rsquo;s face it, everything in computer science is an acronym (XML, JSON, REST, API,&hellip;). I accepted that, in time, I&rsquo;d learn who/what all these acronyms stood for.</p>
+
+<h4>SMART!</h4>
+
+<p>Yeah, I did feel pretty smart. I looked through source code, writing down the classes, how they connect, what they (seemingly) do&hellip;and I felt capable! I felt I was trained pretty well at reading code, understanding it, how to look up things I wasn&rsquo;t sure about&hellip;it was great!</p>
+
+<p>My first day on the job as a software engineer was all I hoped it would be. I&rsquo;ll report on my first week in my next blog post!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[I Graduated. Now What?]]></title>

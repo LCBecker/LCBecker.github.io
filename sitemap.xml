@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://LCBecker.github.io/blog/2015/10/01/its-my-first-day/</loc>
+    <lastmod>2015-10-01T20:17:11-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://LCBecker.github.io/blog/2015/07/20/i-graduated-now-what/</loc>
     <lastmod>2015-07-20T16:57:04-04:00</lastmod>
     <priority>0.8</priority>
@@ -119,14 +125,14 @@
   
   <url>
     <loc>http://LCBecker.github.io/blog/archives/</loc>
-    <lastmod>2015-07-20T17:37:11-04:00</lastmod>
+    <lastmod>2015-10-01T20:48:49-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://LCBecker.github.io/</loc>
-    <lastmod>2015-07-20T17:37:11-04:00</lastmod>
+    <lastmod>2015-10-01T20:48:49-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
