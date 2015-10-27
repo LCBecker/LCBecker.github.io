@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Jersey | From Shakespeare to Java]]></title>
+  <link href="http://LCBecker.github.io/blog/categories/jersey/atom.xml" rel="self"/>
+  <link href="http://LCBecker.github.io/"/>
+  <updated>2015-10-26T21:05:26-04:00</updated>
+  <id>http://LCBecker.github.io/</id>
+  <author>
+    <name><![CDATA[Lori Becker]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[HTTPS With Jersey]]></title>
+    <link href="http://LCBecker.github.io/blog/2015/10/26/https-with-jersey/"/>
+    <updated>2015-10-26T20:16:51-04:00</updated>
+    <id>http://LCBecker.github.io/blog/2015/10/26/https-with-jersey</id>
+    <content type="html"><![CDATA[<p>I am so excited about this post! It&rsquo;s a technical post! With code! I wanted to write this to help others who might find themselves in the same predicament.</p>
+
+<p>This was the issue: I&rsquo;m writing a DropWizard application. DropWizard uses Jersey. My application needed to take in a POST request and use the post body to make a POST request to a trusted server using HTTPS. But then this error showed up:</p>
+
+<pre><code>ERROR [2015-10-22 20:41:23,405] io.dropwizard.jersey.errors.LoggingExceptionMapper: Error handling a request: 8d10b79e51bbb14d
+! java.lang.IllegalStateException: AlreadyConnected
+! at sun.net.www.protocol.http.HttpsUrlConnection.setRequestProperty(Unknown Source)...
+</code></pre>
+
+<p>After doing a little Googling, I found out that the exception is mislabeled. Jersey shouldn&rsquo;t be throwing an IllegalStateException. It should be a SSLHandshakeException. Ok, so the question is: What&rsquo;s the workaround? We need to get Jersey (version 2) to accept a self-signed SSL certificate. This requires creating a class with a method we can call to help build a client with the needed configurations. I created this class exactly as Aleksandr Panzin demonstrated <a href="https://gist.github.com/JAlexoid/b15dba31e5919586ae51">here</a>.</p>
+
+<p>Once I added the <code>JerseyWithSSL</code> class, I realized, &ldquo;Hey, Aleksandr didn&rsquo;t explain how to actually use it!&rdquo; And so now, I provide to you the complete solution! Back in my resources class, I created a client using the <code>JerseyWithSSL</code> method <code>initClient()</code>:</p>
+
+<pre><code>import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import javax.ws.rs.POST;
+import javax.ws.rs.client.Client;
+import org.glassfish.jersey.client.ClientConfig;
+
+@Path("/ticket")
+public class Ticket
+
+@POST
+public Response createTicket(...) {
+    ClientConfig cc = new ClientConfig();
+    Client client = null;
+    try {
+        client = new JerseyWithSSL().initClient(cc);
+    } catch (KeyManagementException e) {
+        e.printStackTrace();
+    } catch (NoSuchAlgorithmException e) { 
+        e.printStackTrace();
+    }
+
+// Use client as you need...
+</code></pre>
+
+<p>The trick was figuring out what exactly the <code>Configuration</code> parameter was supposed to be in the <code>initClient()</code> method. An instance of <code>ClientConfig</code> did the trick. I&rsquo;m happy to say my application works due to this code! Hopefully, it will help you if you ever come across this error.</p>
+
+<p>Happy Coding!</p>
+]]></content>
+  </entry>
+  
+</feed>
