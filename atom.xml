@@ -4,7 +4,7 @@
   <title><![CDATA[From Shakespeare to Java]]></title>
   <link href="http://LCBecker.github.io/atom.xml" rel="self"/>
   <link href="http://LCBecker.github.io/"/>
-  <updated>2015-11-18T21:32:05-05:00</updated>
+  <updated>2015-11-23T20:57:33-05:00</updated>
   <id>http://LCBecker.github.io/</id>
   <author>
     <name><![CDATA[Lori Becker]]></name>
@@ -22,13 +22,15 @@
 
 <h6>IO Graph Art by <a href="http://www.flickr.com/photos/nathanmac87/4415951740">nathanmac87</a></h6>
 
+<p><strong>Post revised 11/23/2015 for correctness. Thank you to Jan-Olav Eide and Tim Bart for leading me in the right direction!</strong></p>
+
 <p>My most recent project at work has been to utilize DropWizard metrics to gather information about an application I built and send that data to Graphite to display in a realtime dashboard. As I normally do, I reviewed the documentation for <a href="https://dropwizard.github.io/metrics/3.1.0/getting-started/">Dropwizard Metrics</a>, but as usual, there was a lot to be desired. Their example did not go into the nitty gritty of <em>how</em> to connect everything together. The internet was also silent on how to actually use DropWizard metrics.</p>
 
 <p>So here is my tutorial on how <em>I</em> was able to get DropWizard metrics up and running in my application:</p>
 
 <h3>1. Maven Application? Update pom.xml</h3>
 
-<p>If you&rsquo;ve got a Maven application, you&rsquo;ll need to add metrics-core as a dependency. If you&rsquo;re using some sort of special reporter like Graphite, you may need to add an additional dependency. This was what I had to add to my pom:</p>
+<p>If you&rsquo;ve got a Maven application, you&rsquo;ll need to add metrics-core as a dependency. If you&rsquo;re using some sort of special reporter like Graphite, you may need to add additional dependencies. This was what I had to add to my pom:</p>
 
 <pre><code>&lt;dependency&gt;
     &lt;groupId&gt;io.dropwizard.metrics&lt;/groupId&gt;
@@ -40,42 +42,49 @@
     &lt;artifactId&gt;metrics-graphite&lt;/artifactId&gt;
     &lt;version&gt;3.1.0&lt;/version&gt;
 &lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;io.dropwizard&lt;/groupId&gt;
+    &lt;artifactId&gt;dropwizard-metrics-graphite&lt;/artifactId&gt;
+    &lt;version&gt;0.9.1&lt;/version&gt;
+&lt;/dependency&gt;
 </code></pre>
 
-<h3>2. Make a Metrics Class</h3>
+<h3>2. Start Your Metrics On Application Startup</h3>
 
-<p>The metrics class we&rsquo;re going to create is going to have a <code>MetricRegistry</code> object that will manage all of our metrics (these are timers, counters, meters, histograms, and gauges). The metrics class has a method to retrieve the <code>MetricRegistry</code> because this is needed to register the meters we will define in our Resources class(es). Finally, it contains a method to report what all of our metrics collect to some output. I sent my data to Graphite. Note that the <code>prefixedWith</code> is not really necessary. What this does is append a label in front of our metrics names. I&rsquo;ll explain this more in Step 3.  This is what my Metrics class looked like:</p>
+<p>Supposedly, there are two ways you can initialize your metrics reporters. A reporter sends your data to either the console, logger, Graphite, or other DropWizard-approved outputs. You can either specify them in your config.yml file, as seen <a href="http://stackoverflow.com/questions/29432586/dropwizard-yaml-for-graphite-server-configuration">here</a>. This is supposed to start reporting your metrics automatically when you start your application. I tried this method, but I had zero luck with it. I ended up getting some parsing error from within DropWizard&rsquo;s validation library.</p>
 
-<pre><code>import java.net.InetSocketAddress;
-import java.util.concurrent.TimeUnit;
-import com.codahale.metrics.MetricFilter;
-import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.graphite.Graphite;
-import com.codahale.metrics.graphite.GraphiteReporter;
+<p>So, I initialized my metrics an alternative way&ndash; in the <code>run()</code> method of my application class. DropWizard&rsquo;s environment already creates a <code>MetricRegistry</code> object on startup. This object manages all of our metrics (these are timers, counters, meters, histograms, and gauges). Since I added metrics to my resources class, I needed to pass that <code>MetricRegistry</code> object to my resource class. This is how my application class looked:</p>
 
-public class MyAppMetrics() {
-    static final MetricRegistry metrics = new MetricRegistry();
+<pre><code>public class MyApplication extends Application&lt;MyConfiguration&gt;{
 
-    public static MetricRegistry getRegistry() {
-        return metrics;
+    public static void main(String[] args) throws Exception {
+        new MyApplication().run(args);
     }
 
-    public static void startReport() {
-        final Graphite graphite = new Graphite(new InetSocketAddress("your.graphite.com", 2003));
-        final GraphiteReporter reporter = GraphiteReporter.forRegistry(metrics)
-        .prefixedWith("upToYou")
-        .convertRatesTo(TimeUnit.SECONDS)
-        .convertDurationTo(TimeUnit.MILLISECONDS)
-        .filter(MetricFilter.ALL)
-        .build(graphite);
-        reporter.start(1, TimeUnit.MINUTES);
+    @Override
+    public void run(MyConfiguration config, Environment env) throws Exception {
+
+        final Graphite graphite = new Graphite(new InetSocketAddress("my.graphite.host", 2003));
+
+        final GraphiteReporter reporter = GraphiteReporter.forRegistry(env.metrics())
+            .prefixedWith("upToYou")
+            .convertRatesTo(TimeUnit.SECONDS)
+            .convertDurationsTo(TimeUnit.MILLISECONDS)
+            .filter(MetricFilter.ALL)
+            .build(graphite);
+        reporter.start(5, TimeUnit.SECONDS);
+        environment.jersey().register(new MyResource(env.metrics()));
     }
 }
 </code></pre>
 
+<p>Some things to note: The <code>prefixedWith</code> is not required. What this does is append a label in front of our metrics names. I&rsquo;ll explain this more in Step 3.</p>
+
 <h3>3. Add Metrics To Your Resources</h3>
 
-<p>I wanted metrics like &lsquo;How many requests are we getting at /path1&rsquo; and &lsquo;How long is it taking for the method handling /path1 to return a response&rsquo;. Chances are you are, too. In order to do this, we&rsquo;ll need to add metrics to our resources. And those metrics need to be &ldquo;saved&rdquo; in the <code>MetricRegistry</code> from Step 2. So we&rsquo;ll need to create a constructor for our resource that will take in the <code>MetricRegistry</code> object we&rsquo;ve got in our metrics class. In addition, we will need to instantiate our metrics inside your Resources constructor. And finally, we need to link those metrics to a method in our resource. Take a look at the following code:</p>
+<p>I wanted metrics like &lsquo;How many requests are we getting at /path1&rsquo; and &lsquo;How long is it taking for the method handling /path1 to return a response&rsquo;. Chances are you are, too. In order to do this, we&rsquo;ll need to add metrics to our resources. And those metrics need to be &ldquo;saved&rdquo; in the <code>MetricRegistry</code> from Step 2. So we&rsquo;ll need to create a constructor for our resource that will take in the <code>MetricRegistry</code> object we passed in Step 2.</p>
+
+<p>There are two ways to add metrics to your resources: using annotations and by actually creating objects of a metrics class. I&rsquo;ll give you an example of both:</p>
 
 <pre><code>public class MyResource {
      MetricRegistry metrics;
@@ -89,7 +98,7 @@ public class MyAppMetrics() {
      @POST
      @Path("/path1")
      @Produces(MediaType.TEXT_PLAIN)
-     @Metered(name="requestCount")
+     @Timed(absolute=true, name="requestRuntime")
      public Response handleRequest() {
         requestCount.mark();
         return Response.ok("Hello World").build(); //you know what I mean...
@@ -100,19 +109,14 @@ public class MyAppMetrics() {
 <p>Notice these details:</p>
 
 <ul>
-<li>We declare the meter <code>requestCount</code>, which will give us the total count of all calls made to /path1 and how many requests /path1 gets in 1 minute, 5 minute, and 15 minute timeframes. This meter is initialized in our Resource constructor, but you could put it in some sort of <code>init()</code> method if you prefer. It&rsquo;s initialization uses our <code>MetricRegistry</code> so it can manage it accordingly.</li>
-<li>Next, we&rsquo;ve placed the annotation <code>@Metered(name="requestCount")</code> above the method we&rsquo;d like to monitor. The name part is just that, a name. Remember in Step 2 when we saw that <code>.prefixedWith("upToYou")</code>? Basically, our reporter, whether Graphite or the console or something else, will refer to this metric by the prefix + name of the metric. Graphite showed me options to graph like, &ldquo;upToYou.requestCount.count&rdquo; and &ldquo;upToYou.requestCount.mean&rdquo; (the &lsquo;count&rsquo; and &lsquo;mean&rsquo; part are automatically attached by DropWizard metrics). You don&rsquo;t need any prefix, but if you want it, go for it.</li>
-<li>Finally, we call our meter&rsquo;s <code>mark()</code> method. That tells the metric, &ldquo;Hey, the method we&rsquo;re tracking has been called! Increment the meter count!&rdquo; The <code>mark()</code> method is for the meter metric, though. Please refer to the <a href="https://dropwizard.github.io/metrics/3.1.0/getting-started/">DropWizard Metrics</a> documentation on how to initialize and call counters, histograms, and other metrics.</li>
+<li>We declare the meter <code>requestCount</code>, which will give us the total count of all calls made to /path1 and how many requests /path1 gets in 1 minute, 5 minute, and 15 minute timeframes. We initialized this <code>Meter</code> object in our Resource constructor, It&rsquo;s initialization uses our <code>MetricRegistry</code> so it can manage it accordingly.</li>
+<li>See the <code>@Timed</code> annotation? DropWizard will automatically create a timer and whenever <code>handleRequest()</code> is called, the timer will record how long it takes to complete this method. We do not need to initialize a timer object ourselves. We can name this timer. I&rsquo;ve added the <code>absolute=true</code> field, because otherwise, the entire path of this metric in Graphite will be my prefix + package path + class + requestRuntime. Too long! By setting absolute to true, the metric path is just the prefix + the metric name.</li>
+<li>Remember in Step 2 when we saw that <code>.prefixedWith("upToYou")</code>? Basically, our reporter, whether Graphite or the console or something else, will refer to this metric by the prefix + name of the metric. Graphite showed me options to graph like, &ldquo;upToYou.requestCount.count&rdquo; and &ldquo;upToYou.requestCount.mean&rdquo; (the &lsquo;count&rsquo; and &lsquo;mean&rsquo; part are automatically attached by DropWizard metrics). You don&rsquo;t need any prefix, but if you want it, go for it back in Step 2.</li>
+<li>Finally, we call our meter&rsquo;s <code>mark()</code> method. That tells the metric, &ldquo;Hey, the method we&rsquo;re tracking has been called! Increment the meter count!&rdquo; The <code>mark()</code> method is for the meter metric, though. Please refer to the <a href="https://dropwizard.github.io/metrics/3.1.0/getting-started/">DropWizard Metrics</a> documentation on how to initialize and call counters, histograms, and other metrics. Now, here we&rsquo;ve programmatically called the meter&rsquo;s method. We don&rsquo;t have to do that. We could just use the annotation <code>@Metered(absolute=true, name="myMeter")</code> and DropWizard would automatically call <code>mark()</code> for us whenever our method was called. But this is how you would do it if you wanted additional control&hellip;or multiple meters on a single method.</li>
 </ul>
 
 
-<h3>4. Start Your Metrics On Application Startup</h3>
-
-<p>We&rsquo;ve almost come full circle! The last step is to simply provide our <code>MetricRegistry</code> in our Metrics class to our Resource and get our metrics to be on the lookout when we start our application. In the <code>run()</code> method in our <code>Application</code> class:</p>
-
-<pre><code>environment.jersey().register(new com.example.resource.MyResource(MyAppMetrics.getRegistry()));
-MyAppMetrics.startReport();
-</code></pre>
+<h3>4. Profit</h3>
 
 <p>Now, when we start up our application, our metrics will be monitoring what we want and sending data to the console or Graphite or wherever!</p>
 
