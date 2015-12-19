@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Javascript | From Shakespeare to Java]]></title>
   <link href="http://LCBecker.github.io/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://LCBecker.github.io/"/>
-  <updated>2015-12-18T19:51:38-05:00</updated>
+  <updated>2015-12-18T19:55:12-05:00</updated>
   <id>http://LCBecker.github.io/</id>
   <author>
     <name><![CDATA[Lori Becker]]></name>
@@ -100,8 +100,9 @@ Directive Two: Add `ng-click` to all keys.
             $compile(element)(scope);
         }
     }
-}]);
-<code>``
+}]);</p>
+
+<p><code>``
 So, Directive One added the</code>myKey<code>directive to each key, which then calls Directive Two, which adds the</code>ng-click<code>attribute to each key. For me, I used a function called</code>pressKey()<code>in my controller. It's accessible via scope and I felt that my controller is where someone would look to see what happens when a button is clicked. You could just as well define what should happen when a key is clicked here in the directive. Also notice that I pass</code>scope.elementId<code>to my</code>pressKey<code>function.</code>scope.elementId` is the key&rsquo;s ID! So, now I know <em>which</em> key was clicked and can handle the case as needed!</p>
 
 <h3>FIN</h3>
