@@ -57,14 +57,14 @@ myApp.directive('svgKeys', ['$compile', function($compile) {
 
 Notice these details: `var keys` is an array of all elements with the class `boardKeys`...the same class I attached to each circle element (key) inside my SVG. For each of these circles, the directive adds the attribute `myKey` which is really the name of Directive Two. Directive Two is then initiated. But first, since I now have the directive that places the SVG into the view, take a look at the view's HTML:
 
-```
-<div class="row">
-	<div class="col-sm-8 col-sm-offset-2">
-		<div svgKeys></div>
+```html
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<div svgKeys></div>
+		</div>
 	</div>
-</div>
-
 ```
+
 
 See how I just threw that directive in there? That'll just embed the SVG in that div! Woohoo! But wait, I still need to register clicking a key.
 
