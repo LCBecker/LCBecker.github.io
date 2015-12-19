@@ -63,6 +63,7 @@ Notice these details: `var keys` is an array of all elements with the class `boa
 		<div svgKeys></div>
 	</div>
 </div>
+
 ```
 
 See how I just threw that directive in there? That'll just embed the SVG in that div! Woohoo! But wait, I still need to register clicking a key.
@@ -85,6 +86,7 @@ myApp.directive('myKey', ['$compile', function($compile) {
 		}
 	}
 }]);
+
 ```
 So, Directive One added the `myKey` directive to each key, which then calls Directive Two, which adds the `ng-click` attribute to each key. For me, I used a function called `pressKey()` in my controller. It's accessible via scope and I felt that my controller is where someone would look to see what happens when a button is clicked. You could just as well define what should happen when a key is clicked here in the directive. Also notice that I pass `scope.elementId` to my `pressKey` function. `scope.elementId` is the key's ID! So, now I know *which* key was clicked and can handle the case as needed!
 
