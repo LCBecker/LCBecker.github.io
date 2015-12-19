@@ -57,7 +57,7 @@ myApp.directive('svgKeys', ['$compile', function($compile) {
 
 Notice these details: `var keys` is an array of all elements with the class `boardKeys`...the same class I attached to each circle element (key) inside my SVG. For each of these circles, the directive adds the attribute `myKey` which is really the name of Directive Two. Directive Two is then initiated. But first, since I now have the directive that places the SVG into the view, take a look at the view's HTML:
 
-```HTML
+```
 <div class="row">
 	<div class="col-sm-8 col-sm-offset-2">
 		<div svgKeys></div>
@@ -86,7 +86,6 @@ myApp.directive('myKey', ['$compile', function($compile) {
 		}
 	}
 }]);
-
 ```
 So, Directive One added the `myKey` directive to each key, which then calls Directive Two, which adds the `ng-click` attribute to each key. For me, I used a function called `pressKey()` in my controller. It's accessible via scope and I felt that my controller is where someone would look to see what happens when a button is clicked. You could just as well define what should happen when a key is clicked here in the directive. Also notice that I pass `scope.elementId` to my `pressKey` function. `scope.elementId` is the key's ID! So, now I know *which* key was clicked and can handle the case as needed!
 
