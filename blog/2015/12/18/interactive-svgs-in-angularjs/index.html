@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Interactive SVGs in AngularJS - From Shakespeare to Java</title>
+  <meta name="author" content="Lori Becker">
+
+  
+  <meta name="description" content="My latest project has been utilizing my art degree (wait, what? An art degree is useful as a software engineer? Surprisingly, YES). Using Inkscape, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://LCBecker.github.io/blog/2015/12/18/interactive-svgs-in-angularjs">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="From Shakespeare to Java" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-53742625-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">From Shakespeare to Java</a></h1>
+  
+    <h2>Life Begins Where Your Comfort Zone Ends.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:LCBecker.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Interactive SVGs in AngularJS</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-12-18T18:28:47-05:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img class="center" src="/images/dvorak.jpg" title="Dvorak keyboard" alt="Dvorak keyboard"></p>
+
+<p>My latest project has been utilizing my art degree (wait, what? An art degree is useful as a software engineer? Surprisingly, YES). Using Inkscape, I created a very customized keyboard as an SVG (Scalable Vector Graphic). There were two things I had to do with this file:</p>
+
+<ol>
+<li>Embed the SVG into a view inside my AngularJS application.</li>
+<li>Each key element/node needed an <code>ng-click</code> attribute so when it was pressed, something would happen. Because, you know, what good is a key if you can&rsquo;t click on it?</li>
+</ol>
+
+
+<p>As I discovered, these two tasks are a lot harder than they should be. Putting an SVG into a view is as simple as making the file path the <code>data</code> of an <code>&lt;object&gt;</code> in the HTML. You can add an <code>ng-click</code> to the <code>&lt;object&gt;</code>, but that only works if you want the entire SVG to be clickable. I wanted interactivity <em>inside</em> the SVG itself. Adding <code>ng-click</code> as an attribute within a node in the SVG file will NOT work! To do what I wanted, I neede to use directives to embed the SVG in the view and attach a <code>ng-click</code> attribute to each of my keys.</p>
+
+<p>I found <a href="" title="https://goo.gl/3s3Vlu">this site</a> that had an interactive map and thought, &ldquo;Hey, that&rsquo;s kind of similar to what I want to do!&rdquo; So, using their insights, I was able to make a clickable keyboard within my AngularJS application. Here&rsquo;s how I did it:</p>
+
+<h3>Add A Class and Unique ID to SVG Nodes</h3>
+
+<p>My keys were mainly circle elements with some text on top. I flattened my SVG to one layer to ensure that when a user clicked anywhere inside the circle element, it would trigger a click event. I added a class to each circle element and also updated the id of each circle element to reference its value, like so:</p>
+
+<pre><code>&lt;circle
+    r="43"
+    cy="569"
+    cx="227"
+    style="fill:#4d4d4d;stroke:#000000;stroke-width:3"
+    id="btn_MENU"
+    class="boardKeys" /&gt;
+</code></pre>
+
+<h3>Make Two Directives</h3>
+
+<p>I just put both directives in the same file: keyDirectives.js.</p>
+
+<p>Directive One: Embed the SVG.</p>
+
+<pre><code class="javascript">var myApp = angular.module('KeyboardAppModule');
+
+myApp.directive('svgKeys', ['$compile', function($compile) {
+    return {
+        restrict: 'A',
+        templateUrl: 'images/keyboard.svg',
+        link: function(scope, element, attrs) {
+            var keys = element[0].querySelectorAll('.boardKeys');
+            angular.forEach(keys, function(path, key) {
+            var myKey = angular.element(path);
+            myKey.attr("myKey", "");
+            $compile(myKey)(scope);
+            })
+        }
+    }
+}]);
+</code></pre>
+
+<p>Notice these details: <code>var keys</code> is an array of all elements with the class <code>boardKeys</code>&hellip;the same class I attached to each circle element (key) inside my SVG. For each of these circles, the directive adds the attribute <code>myKey</code> which is really the name of Directive Two. Directive Two is then initiated. But first, since I now have the directive that places the SVG into the view, take a look at the view&rsquo;s HTML:</p>
+
+<p>```HTML</p>
+
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <div svgKeys></div>
+    </div>
+</div>
+
+
+<pre><code>
+See how I just threw that directive in there? That'll just embed the SVG in that div! Woohoo! But wait, I still need to register clicking a key.
+
+Directive Two: Add `ng-click` to all keys.
+</code></pre>
+
+<p>myApp.directive(&lsquo;myKey&rsquo;, [&lsquo;$compile&rsquo;, function($compile) {
+    return {
+        restrict: &lsquo;A&rsquo;,
+        scope: true,
+        link: function (scope, element, attrs) {
+            scope.elementId = element.attr(&ldquo;id&rdquo;);
+            scope.keyClick = function() {
+                scope.pressKey(scope.elementId);
+            };
+            element.attr(&ldquo;ng-click&rdquo;, &ldquo;keyClick()&rdquo;);
+            element.removeAttr(&ldquo;myKey&rdquo;);
+            $compile(element)(scope);
+        }
+    }
+}]);
+<code>``
+So, Directive One added the</code>myKey<code>directive to each key, which then calls Directive Two, which adds the</code>ng-click<code>attribute to each key. For me, I used a function called</code>pressKey()<code>in my controller. It's accessible via scope and I felt that my controller is where someone would look to see what happens when a button is clicked. You could just as well define what should happen when a key is clicked here in the directive. Also notice that I pass</code>scope.elementId<code>to my</code>pressKey<code>function.</code>scope.elementId` is the key&rsquo;s ID! So, now I know <em>which</em> key was clicked and can handle the case as needed!</p>
+
+<h3>FIN</h3>
+
+<p>It obviously doesn&rsquo;t take a lot of code to make an SVG file&rsquo;s elements interactive in Angular, but it&rsquo;s certainly not intuitive. Nonetheless, it&rsquo;s great that this code works and I&rsquo;m excited for my next Angular application with interactive SVGs!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Lori Becker</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-12-18T18:28:47-05:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/angular/'>angular</a>, <a class='category' href='/blog/categories/javascript/'>javascript</a>, <a class='category' href='/blog/categories/svg/'>svg</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://LCBecker.github.io/blog/2015/12/18/interactive-svgs-in-angularjs/" data-via="" data-counturl="http://LCBecker.github.io/blog/2015/12/18/interactive-svgs-in-angularjs/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/11/18/dropwizard-metrics-101/" title="Previous Post: DropWizard Metrics 101">&laquo; DropWizard Metrics 101</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/12/18/interactive-svgs-in-angularjs/">Interactive SVGs in AngularJS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/11/18/dropwizard-metrics-101/">DropWizard Metrics 101</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/10/26/https-with-jersey/">HTTPS With Jersey</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/10/01/its-my-first-day/">It's My First Day</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/07/20/i-graduated-now-what/">I Graduated. Now What?</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Lori Becker -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'fromshakespearetojava';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://LCBecker.github.io/blog/2015/12/18/interactive-svgs-in-angularjs/';
+        var disqus_url = 'http://LCBecker.github.io/blog/2015/12/18/interactive-svgs-in-angularjs/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

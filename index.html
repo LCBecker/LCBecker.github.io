@@ -9,7 +9,7 @@
   <meta name="author" content="Lori Becker">
 
   
-  <meta name="description" content="IO Graph Art by nathanmac87 Post revised 11/23/2015 for correctness. Thank you to Jan-Olav Eide and Tim Bart for leading me in the right direction! &hellip;">
+  <meta name="description" content="My latest project has been utilizing my art degree (wait, what? An art degree is useful as a software engineer? Surprisingly, YES). Using Inkscape, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,130 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/12/18/interactive-svgs-in-angularjs/">Interactive SVGs in AngularJS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-12-18T18:28:47-05:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="center" src="/images/dvorak.jpg" title="Dvorak keyboard" alt="Dvorak keyboard"></p>
+
+<p>My latest project has been utilizing my art degree (wait, what? An art degree is useful as a software engineer? Surprisingly, YES). Using Inkscape, I created a very customized keyboard as an SVG (Scalable Vector Graphic). There were two things I had to do with this file:</p>
+
+<ol>
+<li>Embed the SVG into a view inside my AngularJS application.</li>
+<li>Each key element/node needed an <code>ng-click</code> attribute so when it was pressed, something would happen. Because, you know, what good is a key if you can&rsquo;t click on it?</li>
+</ol>
+
+
+<p>As I discovered, these two tasks are a lot harder than they should be. Putting an SVG into a view is as simple as making the file path the <code>data</code> of an <code>&lt;object&gt;</code> in the HTML. You can add an <code>ng-click</code> to the <code>&lt;object&gt;</code>, but that only works if you want the entire SVG to be clickable. I wanted interactivity <em>inside</em> the SVG itself. Adding <code>ng-click</code> as an attribute within a node in the SVG file will NOT work! To do what I wanted, I neede to use directives to embed the SVG in the view and attach a <code>ng-click</code> attribute to each of my keys.</p>
+
+<p>I found <a href="" title="https://goo.gl/3s3Vlu">this site</a> that had an interactive map and thought, &ldquo;Hey, that&rsquo;s kind of similar to what I want to do!&rdquo; So, using their insights, I was able to make a clickable keyboard within my AngularJS application. Here&rsquo;s how I did it:</p>
+
+<h3>Add A Class and Unique ID to SVG Nodes</h3>
+
+<p>My keys were mainly circle elements with some text on top. I flattened my SVG to one layer to ensure that when a user clicked anywhere inside the circle element, it would trigger a click event. I added a class to each circle element and also updated the id of each circle element to reference its value, like so:</p>
+
+<pre><code>&lt;circle
+    r="43"
+    cy="569"
+    cx="227"
+    style="fill:#4d4d4d;stroke:#000000;stroke-width:3"
+    id="btn_MENU"
+    class="boardKeys" /&gt;
+</code></pre>
+
+<h3>Make Two Directives</h3>
+
+<p>I just put both directives in the same file: keyDirectives.js.</p>
+
+<p>Directive One: Embed the SVG.</p>
+
+<pre><code class="javascript">var myApp = angular.module('KeyboardAppModule');
+
+myApp.directive('svgKeys', ['$compile', function($compile) {
+    return {
+        restrict: 'A',
+        templateUrl: 'images/keyboard.svg',
+        link: function(scope, element, attrs) {
+            var keys = element[0].querySelectorAll('.boardKeys');
+            angular.forEach(keys, function(path, key) {
+            var myKey = angular.element(path);
+            myKey.attr("myKey", "");
+            $compile(myKey)(scope);
+            })
+        }
+    }
+}]);
+</code></pre>
+
+<p>Notice these details: <code>var keys</code> is an array of all elements with the class <code>boardKeys</code>&hellip;the same class I attached to each circle element (key) inside my SVG. For each of these circles, the directive adds the attribute <code>myKey</code> which is really the name of Directive Two. Directive Two is then initiated. But first, since I now have the directive that places the SVG into the view, take a look at the view&rsquo;s HTML:</p>
+
+<p>&#8220;`HTML</p>
+
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <div svgKeys></div>
+    </div>
+</div>
+
+
+<pre><code>
+See how I just threw that directive in there? That'll just embed the SVG in that div! Woohoo! But wait, I still need to register clicking a key.
+
+Directive Two: Add `ng-click` to all keys.
+</code></pre>
+
+<p>myApp.directive(&lsquo;myKey&rsquo;, [&lsquo;$compile&rsquo;, function($compile) {
+    return {
+        restrict: &lsquo;A&rsquo;,
+        scope: true,
+        link: function (scope, element, attrs) {
+            scope.elementId = element.attr(&ldquo;id&rdquo;);
+            scope.keyClick = function() {
+                scope.pressKey(scope.elementId);
+            };
+            element.attr(&ldquo;ng-click&rdquo;, &ldquo;keyClick()&rdquo;);
+            element.removeAttr(&ldquo;myKey&rdquo;);
+            $compile(element)(scope);
+        }
+    }
+}]);
+<code>``
+So, Directive One added the</code>myKey<code>directive to each key, which then calls Directive Two, which adds the</code>ng-click<code>attribute to each key. For me, I used a function called</code>pressKey()<code>in my controller. It's accessible via scope and I felt that my controller is where someone would look to see what happens when a button is clicked. You could just as well define what should happen when a key is clicked here in the directive. Also notice that I pass</code>scope.elementId<code>to my</code>pressKey<code>function.</code>scope.elementId` is the key&rsquo;s ID! So, now I know <em>which</em> key was clicked and can handle the case as needed!</p>
+
+<h3>FIN</h3>
+
+<p>It obviously doesn&rsquo;t take a lot of code to make an SVG file&rsquo;s elements interactive in Angular, but it&rsquo;s certainly not intuitive. Nonetheless, it&rsquo;s great that this code works and I&rsquo;m excited for my next Angular application with interactive SVGs!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -660,58 +784,6 @@ It&rsquo;s been a very long time since I&rsquo;ve updated this blog, so let me f
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/10/08/from-shakespeare-to-java/">From Shakespeare to Java</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-08T21:56:58-04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="center" src="/images/engineeringbanner.jpg" title="Penn Engineering" alt="Penn Engineering"></p>
-
-<p>A little more than a ago, I was a high school English teacher. I walked around a classroom supervising activities to help my students grasp key concepts of reading, writing, and the &ldquo;collective human experience.&rdquo; And yes, I did teach Shakespeare (&lsquo;Romeo and Juliet&rsquo; and &lsquo;Hamlet&rsquo; to be exact).</p>
-
-<p><strong>So how does a high school English teacher become a software engineer?</strong></p>
-
-<p>Three events happened simultaneously back in April 2013. The first was hitting my 5 year mark as a teacher and not having a permanent position. For 5 years, I had worked in 6 school districts, but the positions were always temporary. School districts were receiving less funding from the state, causing districts to remove teaching positions in favor of larger class sizes. Other districts were laying off teachers in the thousands, causing massive competition for any permanent position out there. I was frustrated. I was a great teacher, I loved my subject, and I loved the profession. But the opportunities were drying up more and more every day and my future was frighteningly uncertain.</p>
-
-<p>The second event had been mulling around for a while, but became a beacon of hope in April. My best friend kept telling me I&rsquo;d make a fantastic software developer. He tried to convince me that computer science <em>is</em> a creative endeavor. He pointed out that I love puzzles (it&rsquo;s true - I do crosswords and logic puzzles on my smartphone all the time) and that writing code is like solving puzzles all day. The more he talked about it, the more interested I became. I considered teaching myself how to code using online resources or attending coding workshops, but then…</p>
-
-<p>My best friend talked to one of his co-workers, who just happenend to have been an English major who went through the MCIT program at the University of Pennsylvania and received a Masters in computer science. It turned out the MCIT program was one of the few in the country that would take students from other disciplines and teach them all the fundamentals of computer science (and then some). After I heard about MCIT, I was pretty convinced that this was an opportunity of a lifetime. I didn&rsquo;t really know if I was going to like programming. But sometimes other people see more in us than we can see in ourselves. So, I applied to the MCIT program…and got accepted!</p>
-
-<p>Today, I know my best friend was right…perhaps too right. Programming is a creative process. It is a long string of puzzles (&ldquo;How do I make the computer do <em>this</em>?&rdquo;). It is challenging, rewarding, frustrating, and awesome all at the same time.</p>
-
-<p>My experience transitioning from English teacher to software engineer (or as I like to say, from Shakespeare to Java) is why I am such an advocate for teaching others about the field of computer science. I think that despite our leaps forward in technology and that most of us use computers and smartphones daily, we are extremely disconnected from what makes all of our electronics&#8217; functionality possible. The younger generation has to actively seek out what computer science is, because it is rarely taught in the public school system. I hope that in the future, more people are at least somewhat knowledgable about programming, even if it is at a very basic level.</p>
-
-<p>So what does the future hold for an English teacher turned software engineer? I don&rsquo;t know, but I can&rsquo;t wait to find out.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -727,6 +799,10 @@ It&rsquo;s been a very long time since I&rsquo;ve updated this blog, so let me f
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/12/18/interactive-svgs-in-angularjs/">Interactive SVGs in AngularJS</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/11/18/dropwizard-metrics-101/">DropWizard Metrics 101</a>
       </li>
     
@@ -740,10 +816,6 @@ It&rsquo;s been a very long time since I&rsquo;ve updated this blog, so let me f
     
       <li class="post">
         <a href="/blog/2015/07/20/i-graduated-now-what/">I Graduated. Now What?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/05/04/graduation-in-t-minus-12-days/">Graduation in T-Minus 12 Days</a>
       </li>
     
   </ul>

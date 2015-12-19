@@ -9,7 +9,7 @@
   <meta name="author" content="Lori Becker">
 
   
-  <meta name="description" content="Mathematics made computer science possible. From the Turing-Church papers to Von Neumann architecture, many of the things we take for granted are &hellip;">
+  <meta name="description" content="A little more than a ago, I was a high school English teacher. I walked around a classroom supervising activities to help my students grasp key &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,58 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/10/08/from-shakespeare-to-java/">From Shakespeare to Java</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-08T21:56:58-04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="center" src="/images/engineeringbanner.jpg" title="Penn Engineering" alt="Penn Engineering"></p>
+
+<p>A little more than a ago, I was a high school English teacher. I walked around a classroom supervising activities to help my students grasp key concepts of reading, writing, and the &ldquo;collective human experience.&rdquo; And yes, I did teach Shakespeare (&lsquo;Romeo and Juliet&rsquo; and &lsquo;Hamlet&rsquo; to be exact).</p>
+
+<p><strong>So how does a high school English teacher become a software engineer?</strong></p>
+
+<p>Three events happened simultaneously back in April 2013. The first was hitting my 5 year mark as a teacher and not having a permanent position. For 5 years, I had worked in 6 school districts, but the positions were always temporary. School districts were receiving less funding from the state, causing districts to remove teaching positions in favor of larger class sizes. Other districts were laying off teachers in the thousands, causing massive competition for any permanent position out there. I was frustrated. I was a great teacher, I loved my subject, and I loved the profession. But the opportunities were drying up more and more every day and my future was frighteningly uncertain.</p>
+
+<p>The second event had been mulling around for a while, but became a beacon of hope in April. My best friend kept telling me I&rsquo;d make a fantastic software developer. He tried to convince me that computer science <em>is</em> a creative endeavor. He pointed out that I love puzzles (it&rsquo;s true - I do crosswords and logic puzzles on my smartphone all the time) and that writing code is like solving puzzles all day. The more he talked about it, the more interested I became. I considered teaching myself how to code using online resources or attending coding workshops, but then…</p>
+
+<p>My best friend talked to one of his co-workers, who just happenend to have been an English major who went through the MCIT program at the University of Pennsylvania and received a Masters in computer science. It turned out the MCIT program was one of the few in the country that would take students from other disciplines and teach them all the fundamentals of computer science (and then some). After I heard about MCIT, I was pretty convinced that this was an opportunity of a lifetime. I didn&rsquo;t really know if I was going to like programming. But sometimes other people see more in us than we can see in ourselves. So, I applied to the MCIT program…and got accepted!</p>
+
+<p>Today, I know my best friend was right…perhaps too right. Programming is a creative process. It is a long string of puzzles (&ldquo;How do I make the computer do <em>this</em>?&rdquo;). It is challenging, rewarding, frustrating, and awesome all at the same time.</p>
+
+<p>My experience transitioning from English teacher to software engineer (or as I like to say, from Shakespeare to Java) is why I am such an advocate for teaching others about the field of computer science. I think that despite our leaps forward in technology and that most of us use computers and smartphones daily, we are extremely disconnected from what makes all of our electronics&#8217; functionality possible. The younger generation has to actively seek out what computer science is, because it is rarely taught in the public school system. I hope that in the future, more people are at least somewhat knowledgable about programming, even if it is at a very basic level.</p>
+
+<p>So what does the future hold for an English teacher turned software engineer? I don&rsquo;t know, but I can&rsquo;t wait to find out.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -664,180 +716,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/08/13/creating-a-wordpress-plugin-settings-page/">Creating a WordPress Plugin Settings Page</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-08-13T14:41:18-04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>In my last <a href="http://lcbecker.github.io/blog/2014/08/12/wordpress-short-codes-for-dummies/">post</a>, I showed you how to make a WordPress short code plugin. In this post, I&rsquo;ll build upon that short code and teach you how to make a simple settings page.</p>
-
-<h3>A Little Backstory</h3>
-
-<p>I found the resources currently available on the web on plugin settings pages extremely frustrating and convoluted for someone&rsquo;s first foray into WordPress development. I was continually pointed to <a href="http://ottopress.com/2009/wordpress-settings-api-tutorial/">Otto&rsquo;s tutorial</a>. Otto&rsquo;s tutorial works. It just isn&rsquo;t clear to beginners why it works or how to modify it for your own purposes. I believe it&rsquo;s always nice just to see a simple tutorial on how to create a plugin settings page before you start introducing how to do all the bells and whistles that can be implemented. This is the only <a href="http://code.tutsplus.com/articles/how-to-integrate-an-options-page-into-your-wordpress-theme--net-11847">site</a> I found that really helped me understand how to create a settings page, and it&rsquo;s to create custom settings for themes. Still, I was able to use it to make a nice, working plugin settings page and for that, I am extremely grateful! My tutorial is to teach you what I&rsquo;ve learned in hopes that you will struggle less than I did.</p>
-
-<h3>Getting Started: Creating The Settings Menu and Page</h3>
-
-<p>There two things we need to do. 1. Add a submenu to the admin page. Our settings page will be found under Settings -> Signature Plugin Settings after all is said and done. 2. Create the settings page itself. Since we&rsquo;re building upon the Signature plugin from my last post, you can add all of the following code right into that same PHP file, directly under the <code>add_shortcode</code> call.</p>
-
-<p>So, let&rsquo;s add a submenu and begin creating our settings page:</p>
-
-<pre><code>add_action('admin_menu', 'sig_admin_add_page');
-
-function sig_admin_add_page() {
-    add_options_page('Signature Plugin Settings', 'Signature Plugin Settings', 'manage_options', 'sig-plugin', 'sig_contents');
-}
-</code></pre>
-
-<p>What does all this code mean/do? Well, the first line tells WordPress to add a submenu to the admin page and to create it using the <code>sig_admin_add_page</code> function. This function calls the <code>add_options_page</code> method which sets the text to be displayed in the menu, the page title for your settings page, the level of capability needed by the user in order to even see this menu option, the slug (end of URL) for the settings page, and finally, the function to call to generate the content of your settings page.</p>
-
-<h3>Creating Your Setting Page&rsquo;s Content</h3>
-
-<p>Remember how the signature&rsquo;s default first name was &ldquo;Firstname&rdquo; and the last name was &ldquo;Lastname&rdquo;? What if we could let the user set the defaults using a plugin settings page? In order to set the first and last name defaults, we need a form where the user can type in what they want and then save what the user types in. Saving the user input requires us to use the WordPress database. So, we&rsquo;ll do a POST to our form when the user clicks the Save Changes button. If a POST occurs (which it should), it will call another function, <code>sig_options_update()</code> to save the values to the WordPress database. Let&rsquo;s see what this all looks like:</p>
-
-<pre><code>function sig_contents() {
-
-    if ( $_POST['update_sigoptions'] == 'true' ) {
-        sig_options_update();
-    }
-    ?&gt;
-
-    &lt;div class="wrap"&gt;
-    &lt;h2&gt; Signature Plugin Settings &lt;/h2&gt;
-    &lt;form action="" method="POST"&gt;
-        &lt;input type="hidden" name="update_sigoptions" value="true" /&gt;
-    &lt;h4&gt; Change the default first and last name used: &lt;/h4&gt;
-    &lt;table&gt;
-    &lt;tr&gt;
-    &lt;td&gt;&lt;label for='firstname'&gt; First name: &lt;/label&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;input id='firstname' name='first' size='40' type='text' value='&lt;?php echo get_option("first_name"); ?&gt;' /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;/tr&gt;
-    &lt;td&gt;&lt;label for='lastname'&gt; Last name: &lt;/label&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;input id='lastname' name='last' size='40' type='text' value='&lt;?php echo get_option("last_name"); ?&gt;' /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;/table&gt;
-    &lt;br&gt;
-    &lt;p&gt;&lt;?php if (!empty($_POST['first])) { echo '&lt;h4 style="text-align:center;"&gt; The first and last name that will be used as the default signature is: ' . $_POST["first"] . " " . $_POST["last"] . '&lt;/h4&gt;'; } ?&gt;&lt;/p&gt;
-        &lt;?php submit_button() ?&gt;
-    &lt;/form&gt;
-&lt;/div&gt;
-&lt;?php
-}
-
-function sig_options_update() {
-    update_option('first_name', $_POST['first']);
-    update_option('last_name', $_POST['last']);
-}
-</code></pre>
-
-<p>Phew, that was a lot of code, but it&rsquo;s all easy stuff. We&rsquo;re simply providing input boxes for the first and last names, then saving those values in the database once a POST has been called via the submit button.</p>
-
-<p>Now that we can set default values for the first and last names and save them in the WordPress database, we need to use those values! And so we must modify our code for our plugin that we wrote earlier.</p>
-
-<h3>Modifying The Signature Plugin</h3>
-
-<h5>If you&rsquo;re not using attributes</h5>
-
-<p>To use our saved database values, all we need to do is modify the <code>add_signature()</code> function, like so:</p>
-
-<pre><code>function add_signature() {
-
-    // Gets values from the WordPress database.
-    $first = get_option('first_name');
-    $last = get_option('last_name');
-
-    // If we don't have something saved in the database for the first name, we need to give it some value…in this case, "Firstname".
-    if (empty($first)) {
-        $first = "Firstname";
-    }
-
-    if (empty($last)) {
-        $last = "Lastname";
-    }
-
-    return '&lt;p&gt; Sincerely, ' . $first . ' ' . $last '&lt;/p&gt;';
-}
-</code></pre>
-
-<p>After adding this new code, you&rsquo;ll need to rezip and install your updated plugin into WordPress. If you&rsquo;re using WordPress locally through something like XAMPP, just copy the updated PHP file into wordpress/wp-content/plugins/signature folder you made previously.</p>
-
-<h5>If you are using attributes</h5>
-
-<p>This may be some ugly code (sorry!), but we need it in order to check for certain conditions. Are there default values stored in the database? If not, we need to provide something. Were there attributes? If so, let&rsquo;s use those instead. So, our new <code>add_atts</code> function looks like this:</p>
-
-<pre><code>function add_atts($first, $last) {
-    $name1;
-    $name2;
-
-    // Gets values from the WordPress database.
-    $data_first = get_option('first_name');
-    $data_last = get_option('last_name');
-
-    if (empty($first)) { // If no first name attribute was provided
-        if (empty($data_first)) { // If no  default first name is saved in the database
-            $name1 = "Firstname"; // Firstname = "Firstname"
-        } else {
-            $name1 = $data_first; // If a default first name is saved, use it.
-        }
-    } else {
-        $name1 = $first; // If a first name attribute was provided, use it.
-    }
-
-    if (empty($last)) {
-        if (empty($data_last)) {
-            $name2 = "Lastname";
-        } else {
-            $name2 = $data_last;
-        }
-    } else {
-        $name2 = $last;
-    }
-
-    return $name1 . " " . $name2;
-}
-</code></pre>
-
-<p>After adding this new code, you&rsquo;ll need to rezip and install your updated plugin into WordPress. If you&rsquo;re using WordPress locally through something like XAMPP, just copy the updated PHP file into wordpress/wp-content/plugins/signature folder you made previously.</p>
-
-<h3>Testing And Troubleshooting</h3>
-
-<p>When I first made a WordPress plugin, I got an error when I installed and activated it…a warning about headings appeared. If this is your first time making a plugin and you&rsquo;re not familiar with coding in PHP, you might not know that leaving spaces after the end of a block of PHP code creates this odd heading error in WordPress. Just make sure that there is no extra line or lines after the <code>?&gt;</code> at the end of your file. This should clear that error up.</p>
-
-<p>Second, you might want to dive into the WordPress database and see for yourself if you&rsquo;ve set the <code>first_name</code> and <code>last_name</code> options! Since we didn&rsquo;t use arrays to save our values, you can actually see them (values saved in an array show up as SERIALIZED…not very helpful). Login to WordPress and after wp-admin/ add options.php. This shows you every value saved in the WordPress database. If you haven&rsquo;t played around with your settings page yet, <code>first_name</code> and <code>last_name</code> won&rsquo;t be in there. But if you have, they will be there in the list as well as their associated values.</p>
-
-<h3>Final Thoughts</h3>
-
-<p>Now you know how to make a short code plugin (with or without attributes) and a settings page for it that saves values in the WordPress database. I&rsquo;ve tried to show you how to do this as simply as possible with descriptions that explain exactly what we&rsquo;re doing and why. Hopefully, you can now use this knowledge to create your own plugin and have it do what you want. Happy coding!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/3">&larr; Older</a>
@@ -855,6 +733,10 @@ function sig_options_update() {
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/12/18/interactive-svgs-in-angularjs/">Interactive SVGs in AngularJS</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/11/18/dropwizard-metrics-101/">DropWizard Metrics 101</a>
       </li>
     
@@ -868,10 +750,6 @@ function sig_options_update() {
     
       <li class="post">
         <a href="/blog/2015/07/20/i-graduated-now-what/">I Graduated. Now What?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/05/04/graduation-in-t-minus-12-days/">Graduation in T-Minus 12 Days</a>
       </li>
     
   </ul>
