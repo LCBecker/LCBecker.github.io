@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ergonomics | From Shakespeare to Java]]></title>
+  <link href="http://LCBecker.github.io/blog/categories/ergonomics/atom.xml" rel="self"/>
+  <link href="http://LCBecker.github.io/"/>
+  <updated>2016-02-21T21:36:43-05:00</updated>
+  <id>http://LCBecker.github.io/</id>
+  <author>
+    <name><![CDATA[Lori Becker]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Time for a New Keyboard]]></title>
+    <link href="http://LCBecker.github.io/blog/2016/02/16/a-rant-about-ergonomics/"/>
+    <updated>2016-02-16T17:10:38-05:00</updated>
+    <id>http://LCBecker.github.io/blog/2016/02/16/a-rant-about-ergonomics</id>
+    <content type="html"><![CDATA[<p><img class="center" src="/images/kinesis.jpg" title="&lsquo;kinesis keyboard&rsquo; &lsquo;kinesis keyboard&rsquo;" ></p>
+
+<p>I&rsquo;ve been thinking a lot about ergonomics lately. A few weeks ago, I thought I was dreaming as I looked down and saw that my little finger&rsquo;s bone had somehow managed to overlap my ring finger&rsquo;s bone. My hand looked like a claw! I had to use my other hand to set my finger bones back in shape.</p>
+
+<p>I knew I had to do something. I love software engineering, but let&rsquo;s face it––it&rsquo;s sort of a crippling job. Sitting all day: Not good. Typing/mousing all day: Not good.</p>
+
+<p>I&rsquo;ve written <a href="http://lcbecker.github.io/blog/2014/11/13/why-i-type-in-dvorak/">before</a> about how switching to Dvorak helped alleviate my RSI. But clearly, it was back. A simple search discovered that the Apple Magic Bluetooth keyboard is absolutely AWFUL for RSI. Time for a new keyboard&hellip;</p>
+
+<h3>Ye Old Keyboard</h3>
+
+<p>First, I brought my old Logitech keyboard to work. This poor keyboard has been sitting collecting dust in front of my desktop (which was last turned on&hellip;hmm&hellip;3 years ago?). Right away, there was a problem––the number pad on the right. I felt like my mouse was so far away and my right arm was forced to be at a 60 degree angle from my body to type. Awkward!</p>
+
+<h3>The Kinesis Classic QD</h3>
+
+<p>Thankfully, a friend allowed me to borrow his Kinesis Classic QD keyboard (pictured above) to get a feel for it. He swears by it after suffering himself from RSI and has been using it for years! This is probably one of the strangest keyboards I&rsquo;ve ever seen, but it has a lot going for it. The wrist pads are perfectly positioned. The inset wells for the keys puts your fingers at a natural downward tilt. And what I loved most of all––the division between left and right puts your arms perpendicular to your body, which is way more comfortable than having them angled to the middle of your body! It also has the keys you probably press the most pushed to the thumb regions. The keys can be remapped in whatever configuration you prefer.</p>
+
+<p>After trying the Kinesis Classic (newer versions are called the <a href="https://www.kinesis-ergo.com/shop/advantage-for-pc-mac/">Advantage</a>) for a week, it was clear what I loved and hated about this keyboard. And what I hated was the key configurations. I have tiny hands, so using any of the thumb buttons was actually putting a lot of strain on my wrists to twist and reach those buttons. Even though I could remap keys, it was really difficult getting used to pressing keys that I was used to being placed in areas of the keyboard that no longer existed in the Kinesis key layout. Yet, this trial run was enough to convince me that Kinesis was on to something&hellip;</p>
+
+<h3>The Kinesis FreeStyle2</h3>
+
+<p>I&rsquo;ll write a post about my experiences with this keyboard once I get it later this week. However, I think the Kinesis <a href="https://www.kinesis-ergo.com/shop/freestyle2-for-mac/">FreeStyle2</a> has everything I loved about the Classic without all the things I disliked. I bought the 20&#8221; extension for that great left/right arm separation. I also purchased the optional VIP3 accessory package that allows you to vertically tilt the keyboard. Supposedly, the &ldquo;handshake&rdquo; position is better for your wrists and arms. If you have pain in your lower arm, this might be great for you. The VIP3 also comes with Kinesis&#8217; awesome wrist pads (seriously, they&rsquo;re worth raving about!).</p>
+
+<p><em>Stay Tuned For More On My Journey into Being More Ergonomical!</em></p>
+]]></content>
+  </entry>
+  
+</feed>
