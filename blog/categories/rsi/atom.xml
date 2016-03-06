@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rsi | From Shakespeare to Java]]></title>
   <link href="http://LCBecker.github.io/blog/categories/rsi/atom.xml" rel="self"/>
   <link href="http://LCBecker.github.io/"/>
-  <updated>2016-02-21T21:38:36-05:00</updated>
+  <updated>2016-03-06T12:43:46-05:00</updated>
   <id>http://LCBecker.github.io/</id>
   <author>
     <name><![CDATA[Lori Becker]]></name>
@@ -12,6 +12,76 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The Kinesis FreeStyle2]]></title>
+    <link href="http://LCBecker.github.io/blog/2016/02/24/the-kinesis-freestyle2/"/>
+    <updated>2016-02-24T20:24:50-05:00</updated>
+    <id>http://LCBecker.github.io/blog/2016/02/24/the-kinesis-freestyle2</id>
+    <content type="html"><![CDATA[<p><img class="center" src="/images/freestyle.jpg" title="&lsquo;kinesis keyboard&rsquo; &lsquo;kinesis keyboard&rsquo;" ></p>
+
+<p>So, how&rsquo;s my new Kinesis FreeStyle2 keyboard? Is it as ergonomical as I need it to be relieve my RSI symptoms? Would it work well for you? Read on!</p>
+
+<h3>Day 1</h3>
+
+<p>I started my work day setting up the FreeStyle2 with the the VIP3 accessory kit. It took about 10 minutes, because I actually read directions :-P The wrist rests and the lifts snapped in nice and easy! I decided to use the largest angle, 15 degrees, for the lift. The more vertical it is, the more like that handshake position that&rsquo;s supposed to be ideal.</p>
+
+<h4>Benefits of a Split Keyboard</h4>
+
+<p>There are so many benefits of having a split keyboard. For one, my arms were so much more relaxed. Not only did it help my arms, but my back as well!</p>
+
+<p>One surprising benefit of the split keyboard: the space in the middle! I was able to put my steno pad front and center! No longer was it off to the side so I&rsquo;d have to keep pivoting to look at my notes!</p>
+
+<h4>Hotkey Blunder</h4>
+
+<p>One of the things I was really looking forward having on the FreeStyle2 were the special keys on the left key panel. There are a variety of hotkeys including copy, paste, and select all. No more Command+C! So, as I was working, I found myself in situations that required copying and pasting text. Time to use the hotkeys! So, I highlighted some text, pressed the Copy hotkey&hellip;.and heard a &ldquo;ERRRR&rdquo; noise out of my headphones. I started pressing a variety of hotkeys and each one did not do as it was expected. One of the keys put Google Chrome in background mode (who knew Chome had such a thing as background mode?) and the others force quit some of my applications! YIKES!</p>
+
+<p>I searched online, but no one reported issues with this keyboard&rsquo;s hotkeys. That could only mean one thing: Dvorak. I switched over to the Dvorak-Qwerty setting on my Mac and TA DA, the hotkeys worked!!!</p>
+
+<h3>Week 1+</h3>
+
+<p>Well, it&rsquo;s been one week of using my Kinesis keyboard. Some things have definitely changed since Day 1. Let&rsquo;s review:</p>
+
+<h4>Goodbye, Hotkeys</h4>
+
+<p>The hotkeys are still buggy. Really buggy. After switching to Dvorak-Qwerty, they worked, but only in certain applications. They didn&rsquo;t work in my main code editor, Eclipse. The applications where they did work made other Command+keys stopped working––one of which was the all important Command+S (Save). In my Atom editor, I apparently re-assigned keypresses by pressing Command+S. OOPS! Needless to say, I decided to go back to regular Dvorak, making the hotkeys useless again. At least I can actually save my work now.</p>
+
+<h4>Tilt Good? Tilt Bad?</h4>
+
+<p>I can&rsquo;t decide whether the 15 degree tilt is comfortable or not. I&rsquo;ve been experimenting now with the 10 degree tilt. I&rsquo;m not sure whether it&rsquo;s actually beneficial. The jury is still out on this one.</p>
+
+<h4>Where Should My Mouse Go?</h4>
+
+<p>I think this is the most fundamentally troubling question I&rsquo;ve been trying to answer this past week. The split keyboard makes my arms nice and comfortable, but only when <strong>typing</strong>. But my mouse is farther away, meaning I need to lean over to do all my clicking, moving of arrows, and scrolling. After a day or two of my new configuration, my right shoulder was really uncomfortable.</p>
+
+<p>For a few days, I tried putting my mouse in the middle, between the two keyboard pads. But this is sadly also uncomfortable. It kind of negates the reason why I wanted a split keyboard in the first place&hellip;so my arms would not be at some unnatural angle in front of my body.</p>
+
+<p>Lately, I&rsquo;ve tried doing as much as I can via the keyboard. I&rsquo;ve started learning the keypresses needed to toggle between tabs and applications. I&rsquo;ve used the page-down keys more for scrolling down on webpages. It&rsquo;s better than constantly reaching for the mouse. But the mouse is still essential and it&rsquo;s hard to know what else I can do to make using it more comfortable.</p>
+
+<h3>Final Thoughts</h3>
+
+<p>I&rsquo;m still very happy with my Kinesis FreeStyle2 purchase.</p>
+
+<p><strong>PROS:</strong></p>
+
+<ul>
+<li>It really has helped a lot with my wrist, arm, shoulder and finger pain.</li>
+<li>That space in between the keypads is great for a notebook!</li>
+<li>There&rsquo;s no learning curve to use it. It&rsquo;s a regular keyboard, just in a split configuration!</li>
+</ul>
+
+
+<p><strong>CONS:</strong></p>
+
+<ul>
+<li>Your mouse will be further away due to the split. There&rsquo;s probably no place to put your mouse in a comfortable position. You&rsquo;ll need to try learning more key shortcuts to do things you&rsquo;d normally do with your mouse so you don&rsquo;t need to reach for your mouse as much.</li>
+<li>If you type in Dvorak, the hotkeys are useless.</li>
+</ul>
+
+
+<p>Thanks for reading!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Time for a New Keyboard]]></title>
