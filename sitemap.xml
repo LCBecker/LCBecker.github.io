@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://LCBecker.github.io/blog/2016/05/19/a-change-in-scenery/</loc>
+    <lastmod>2016-05-19T18:38:54-04:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://LCBecker.github.io/blog/2016/02/24/the-kinesis-freestyle2/</loc>
     <lastmod>2016-02-24T20:24:50-05:00</lastmod>
     <priority>0.8</priority>
@@ -155,14 +161,14 @@
   
   <url>
     <loc>http://LCBecker.github.io/blog/archives/</loc>
-    <lastmod>2016-03-06T12:43:46-05:00</lastmod>
+    <lastmod>2016-05-19T19:48:03-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://LCBecker.github.io/</loc>
-    <lastmod>2016-03-06T12:43:46-05:00</lastmod>
+    <lastmod>2016-05-19T19:48:03-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
