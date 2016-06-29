@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Reinventing the Wheel (or Web Server) - From Shakespeare to Java</title>
+  <title>The Right Stuff - From Shakespeare to Java</title>
   <meta name="author" content="Lori Becker">
 
   
-  <meta name="description" content="My current (and final) course before I graduate has given me a new appreciation for Java packages. As developers, we use them all the time. In some &hellip;">
+  <meta name="description" content="Building applications requires time, thoughtful planning, and the right tools to complete the task. There are so many programming languages and &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://LCBecker.github.io/blog/2015/03/23/reinventing-the-wheel-or-web-server">
+  <link rel="canonical" href="http://LCBecker.github.io/blog/2016/06/29/the-right-stuff">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="From Shakespeare to Java" type="application/atom+xml">
@@ -80,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">Reinventing the Wheel (or Web Server)</h1>
+      <h1 class="entry-title">The Right Stuff</h1>
     
     
       <p class="meta">
@@ -96,30 +96,22 @@
   
 
 
-<time datetime="2015-03-23T09:10:53-04:00" pubdate data-updated="true"></time>
+<time datetime="2016-06-29T17:53:22-04:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>My current (and final) course before I graduate has given me a new appreciation for Java packages. As developers, we use them all the time. In some cases, the more packages you know about, the more efficient and readable your code may be and the more sanity you get to keep.</p>
+<div class="entry-content"><p>Building applications requires time, thoughtful planning, and the right tools to complete the task. There are so many programming languages and frameworks to choose from that sometimes I think people are overwhelmed by the &ldquo;possibilities.&rdquo;</p>
 
-<p>My appreciation for packages has grown because the assignments I&rsquo;ve had to do for this course have basically asked me to build a number of things from scratch:</p>
+<p>At work, we use Scala and Play Framework. Normally, those who come from a Java background are supposed to be amazed by the versatility of Scala. I come from a Java background. I am not impressed. I don&rsquo;t <em>hate</em> Scala, but it&rsquo;s a struggle to use because it is poorly documented. The massive amount of collections, both mutable and immutable, is not a feature. I&rsquo;m constantly using the REPL to determine how to add, delete, and retrieve values from the whole host of Scala collections. It&rsquo;s not intuitive. Scala is like an elitist programming language. It&rsquo;s like its creators decided, &ldquo;Oh, you&rsquo;d like to learn Scala? That&rsquo;s great! Best of luck to you!&rdquo; and then idly stand by and laugh as you try to make sense of it all. I even own a book on Scala and even it is ambiguous at best on many &ldquo;features&rdquo; of Scala.</p>
 
-<ul>
-<li>A web server</li>
-<li>An HTTP client</li>
-<li>A thread pool</li>
-<li>A servlet container</li>
-<li>An XPath parser</li>
-<li>An matcher between an XPath and an XML document.</li>
-</ul>
+<p>Now on to Play Framework, which is even worse than Scala itself. I&rsquo;m pretty much a pro at application frameworks. I&rsquo;ve used Ruby on Rails, Dropwizard (Java), Django (Python), Node.js, and probably a few more that I&rsquo;m forgetting right now. I&rsquo;ll admit that Play&rsquo;s backend functionality&hellip;you know, models and controllers, are rather straight forward. If you actually know Scala or Java (though Play seems to discourage using Java), you&rsquo;re all set. But when it comes to writing a front-end? Good luck!</p>
 
+<p>I spent almost 2 weeks on building a view that should have taken 2 days. I wanted a rather simple form and Play&rsquo;s Form generation seemed like the way to go. It has validation on the backend, serializes to a model, and all that good stuff. Unfortunately, many use cases just do not conform to Play&rsquo;s idea of a form. I wanted radio button displayed vertically. Play said NO. I wanted radio buttons that looked like buttons (no circle to click on&hellip;instead, the button background should change when clicked). Play has no means of doing that. It says you can create your own inputs, but that&rsquo;s in the <em>singular</em> and obviously, I wanted multiple radio buttons. I asked for help on StackOverflow and even in the Play Framework Google group. <strong>CRICKETS.</strong> If you use this framework, you are on your own to figure out how to use it. The documentation lacks full descriptions of how to do basic things and there&rsquo;s no community for help.</p>
 
-<p>Of course, someone has already written the code to do all of these things in Java. It&rsquo;s either already built into Java or you can download a jar file to use it. But try writing these things from scratch and you&rsquo;ll find that you begin to write some of the nastiest code you&rsquo;ve ever written. Classes become horribly coupled, but that&rsquo;s the only way to make the application work. For writing your own servlet container, the API that describes the HttpRequest and HttpResponse interface methods is lacking. But it will make you appreciate Tomcat and all the work that went into making it.</p>
-
-<p>It&rsquo;s amusing that as a computer science student, I have been given a repetoire of principles to code by - DRY, KISS, YAGNI - and most of my assignments force me to violate them one way or another. Sure, writing certain functionality from scratch to really understand how things work under the covers is a great learning experience. But it&rsquo;s hardly simple when I could just import a package and use the classes/methods within it. Reinventing the wheel (or the web server, or the XPath parser, etc.) is a lot trickier than you&rsquo;d expect.</p>
+<p>In the end, I was put out my misery and wrote the front-end in pure HTML with some jQuery and Parsley for validation. And it took me barely a few hours to get everything working! Just because something is there doesn&rsquo;t mean it&rsquo;s the right tool. Sometimes, if you know something is just easier to work with, saves time, and the result will be easier to maintain in the long run, that&rsquo;s what you should choose.</p>
 </div>
 
 
@@ -142,15 +134,21 @@
   
 
 
-<time datetime="2015-03-23T09:10:53-04:00" pubdate data-updated="true"></time>
+<time datetime="2016-06-29T17:53:22-04:00" pubdate data-updated="true"></time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/framework/'>framework</a>, <a class='category' href='/blog/categories/play/'>play</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://LCBecker.github.io/blog/2015/03/23/reinventing-the-wheel-or-web-server/" data-via="" data-counturl="http://LCBecker.github.io/blog/2015/03/23/reinventing-the-wheel-or-web-server/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://LCBecker.github.io/blog/2016/06/29/the-right-stuff/" data-via="" data-counturl="http://LCBecker.github.io/blog/2016/06/29/the-right-stuff/" >Tweet</a>
   
   
   
@@ -159,10 +157,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2015/01/28/a-year-and-a-half-later/" title="Previous Post: A Year And A Half Later">&laquo; A Year And A Half Later</a>
+        <a class="basic-alignment left" href="/blog/2016/05/25/what-it-means-to-be-intech/" title="Previous Post: What It Means To Be In Tech">&laquo; What It Means To Be In Tech</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2015/05/04/graduation-in-t-minus-12-days/" title="Next Post: Graduation in T-Minus 12 Days">Graduation in T-Minus 12 Days &raquo;</a>
       
     </p>
   </footer>
@@ -228,8 +224,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://LCBecker.github.io/blog/2015/03/23/reinventing-the-wheel-or-web-server/';
-        var disqus_url = 'http://LCBecker.github.io/blog/2015/03/23/reinventing-the-wheel-or-web-server/';
+        var disqus_identifier = 'http://LCBecker.github.io/blog/2016/06/29/the-right-stuff/';
+        var disqus_url = 'http://LCBecker.github.io/blog/2016/06/29/the-right-stuff/';
         var disqus_script = 'embed.js';
       
     (function () {

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Play | From Shakespeare to Java]]></title>
+  <link href="http://LCBecker.github.io/blog/categories/play/atom.xml" rel="self"/>
+  <link href="http://LCBecker.github.io/"/>
+  <updated>2016-06-29T18:22:20-04:00</updated>
+  <id>http://LCBecker.github.io/</id>
+  <author>
+    <name><![CDATA[Lori Becker]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The Right Stuff]]></title>
+    <link href="http://LCBecker.github.io/blog/2016/06/29/the-right-stuff/"/>
+    <updated>2016-06-29T17:53:22-04:00</updated>
+    <id>http://LCBecker.github.io/blog/2016/06/29/the-right-stuff</id>
+    <content type="html"><![CDATA[<p>Building applications requires time, thoughtful planning, and the right tools to complete the task. There are so many programming languages and frameworks to choose from that sometimes I think people are overwhelmed by the &ldquo;possibilities.&rdquo;</p>
+
+<p>At work, we use Scala and Play Framework. Normally, those who come from a Java background are supposed to be amazed by the versatility of Scala. I come from a Java background. I am not impressed. I don&rsquo;t <em>hate</em> Scala, but it&rsquo;s a struggle to use because it is poorly documented. The massive amount of collections, both mutable and immutable, is not a feature. I&rsquo;m constantly using the REPL to determine how to add, delete, and retrieve values from the whole host of Scala collections. It&rsquo;s not intuitive. Scala is like an elitist programming language. It&rsquo;s like its creators decided, &ldquo;Oh, you&rsquo;d like to learn Scala? That&rsquo;s great! Best of luck to you!&rdquo; and then idly stand by and laugh as you try to make sense of it all. I even own a book on Scala and even it is ambiguous at best on many &ldquo;features&rdquo; of Scala.</p>
+
+<p>Now on to Play Framework, which is even worse than Scala itself. I&rsquo;m pretty much a pro at application frameworks. I&rsquo;ve used Ruby on Rails, Dropwizard (Java), Django (Python), Node.js, and probably a few more that I&rsquo;m forgetting right now. I&rsquo;ll admit that Play&rsquo;s backend functionality&hellip;you know, models and controllers, are rather straight forward. If you actually know Scala or Java (though Play seems to discourage using Java), you&rsquo;re all set. But when it comes to writing a front-end? Good luck!</p>
+
+<p>I spent almost 2 weeks on building a view that should have taken 2 days. I wanted a rather simple form and Play&rsquo;s Form generation seemed like the way to go. It has validation on the backend, serializes to a model, and all that good stuff. Unfortunately, many use cases just do not conform to Play&rsquo;s idea of a form. I wanted radio button displayed vertically. Play said NO. I wanted radio buttons that looked like buttons (no circle to click on&hellip;instead, the button background should change when clicked). Play has no means of doing that. It says you can create your own inputs, but that&rsquo;s in the <em>singular</em> and obviously, I wanted multiple radio buttons. I asked for help on StackOverflow and even in the Play Framework Google group. <strong>CRICKETS.</strong> If you use this framework, you are on your own to figure out how to use it. The documentation lacks full descriptions of how to do basic things and there&rsquo;s no community for help.</p>
+
+<p>In the end, I was put out my misery and wrote the front-end in pure HTML with some jQuery and Parsley for validation. And it took me barely a few hours to get everything working! Just because something is there doesn&rsquo;t mean it&rsquo;s the right tool. Sometimes, if you know something is just easier to work with, saves time, and the result will be easier to maintain in the long run, that&rsquo;s what you should choose.</p>
+]]></content>
+  </entry>
+  
+</feed>
