@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>How to Create Custom CSVs From jQuery Datatables - From Shakespeare to Java</title>
+  <meta name="author" content="Lori Becker">
+
+  
+  <meta name="description" content="It&rsquo;s official! I&rsquo;ve been a software engineer who has been gainfully employed for more than 1 year. And so, to celebrate, this post will &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://LCBecker.github.io/blog/2016/12/16/how-to-create-custom-csvs-from-jquery-datatables">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="From Shakespeare to Java" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-53742625-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">From Shakespeare to Java</a></h1>
+  
+    <h2>Life Begins Where Your Comfort Zone Ends.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:LCBecker.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">How to Create Custom CSVs From jQuery Datatables</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-12-16T09:59:05-05:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>It&rsquo;s official! I&rsquo;ve been a software engineer who has been gainfully employed for more than <strong>1 year</strong>. And so, to celebrate, this post will be a technical one! Where I work, there&rsquo;s a scenario that pops up quite often:</p>
+
+<blockquote><p>We&rsquo;d like to be able to export the data in a table located on <em>x</em> page of our application as a CSV file.</p></blockquote>
+
+<p>It sounds simple enough. We use jQuery Datatables to generate most of the tables in our application. And of course, Datatables actually provides the ability to <a href="https://datatables.net/reference/button/csv">save the table as a CSV</a> or another file type. But unfortunately, there are some problems with using Datatables' built in CSV export:
+1. Pagination: If you dynamically fill each page with data by making new ajax calls, then the CSV export will only export the active page, not all data.
+2. You might want to include some data that&rsquo;s not displayed in the datatable, such as hidden values, or those used as part of a link for a row.</p>
+
+<p>This is when you need to generate a custom CSV from your datatable. Here&rsquo;s the process:</p>
+
+<ol>
+<li>Create an export button near your datatable. Simple enough.</li>
+<li>Next, you need to get the raw data. There are 2 ways to do this, depending on your situation. If there&rsquo;s no pagination and all of your data is contained in the datatable, you can simply do:
+<code>
+var dt = $("#idOfMyDatatable").DataTable();
+var data = dt.rows().data();
+</code>
+If you&rsquo;re using pagination and need to retrieve all data, you can make an ajax request to your backend, probably to the same function you use to populate your datatable in the first place, but you can update it to retrieve all data by setting the <code>iDisplayLength</code> value to the <code>recordsDisplay</code> value. That&rsquo;s the total number of values in the table (The 100 in &lsquo;Viewing 1-10 of 100&rsquo;):
+<code>
+var dt = $("#idOfMyDatatable").DataTable();
+dt.on('init.dt', function(e) {
+var params = table.ajax.params();
+var iDisplayLength = dt.page.info().recordsDisplay;
+$.ajax({
+ url: "/getDTJson/?iColumns=" + params.iColumns + "&amp;iDisplayStart=0&amp;iDisplayLength=" + iDisplayLength + "&amp;sSearch=" + params.sSearch,
+ type: 'GET',
+ success: function(data) {
+   //This is our next step - working with the data. For now, you've retrieved it!
+ }
+ });
+});
+</code></li>
+<li>So, once we have our data, we can begin to craft our CSV file. We&rsquo;ll need to set up our basics like the headers and some basic file information. We&rsquo;ll also need to create an array, where each value is a line in the CSV.
+<code>
+var headings = ["Heading1", "Heading2", "Heading3"];
+var lineArray = [];
+lineArray.push("data:application/csv;charset=utf-8," + headings);
+</code></li>
+<li>Adding your actual data depends on how you retrieved your data in step 2.</li>
+<li>If you&rsquo;re getting your data from the datatable itself, ie: <code>var data = dt.rows().data();</code>, your data will look a little something like</li>
+</ol>
+
+
+<pre><code class="``">  {"0": ["value1", "value2", "value3", "value4"], "1":["value1", "value2", "value3", "value4"]}
+</code></pre>
+
+<p>  You will need to loop through each array in the data object, pulling out only the values you want and storing those in a new array. If those values could possible contain a comma, make sure you escape them. Finally, join all values in your array into a string using a comma separator and store that string in your line array:</p>
+
+<pre><code class="``">  for(var i = 0; i &lt; data.length; i++) {
+    var lineWithSelectedValues = [];
+    lineWithSelectedValues.push("\"" + data[i][0] + "\"");
+    lineWithSelectedValues.push(data[i][2]);
+    lineWithSelectedValues.push("\"" + data[i][3] + "\"");
+    var csvLine = lineWithSelectedValues.join(",");
+    lineArray.push(csvLine);
+  }
+</code></pre>
+
+<pre><code>* If you had to make a new ajax call to retrieve your data, your data will be in a two-dimensional array under the key `aaData`. Your data will look something like
+```
+{"aaData": [["value1", "value2", "value3", "value4"],["value1", "value2", "value3", "value4"]]}
+```
+You will need to loop through each nested array and extract only the values you want. Usually, I do this via a separate function, but for ease, I'll combine it into my code sample:
+
+```
+for (var i = 0; i &lt; data.aaData.length; i++) {
+  var dataArray = data.aaData[i];
+  var lineWithSelectedValues = [];
+  lineWithSelectedValues.push("\"" + dataArray[0] + "\"");
+  lineWithSelectedValues.push(dataArray[2]);
+  lineWithSelectedValues.push("\"" + dataArray[3] + "\"");
+  var csvLine = lineWithSelectedValues.join(",");
+  lineArray.push(csvLine);
+}
+```
+</code></pre>
+
+<ol>
+<li>Our last step is to finalize our CSV content and hook up our export button to actually provide the ability to download the CSV. No matter how you got your data, you should have an array <code>var lineArray</code> that contains comma separated strings. We need to convert that to being just one string, with each string-row ending in a new line.
+<code>
+var csvContent = lineArray.join("\n");
+var fileName = 'MyDatatbleCsv';
+$("#exportBtn").attr({
+'href': encodeURI(csvContent),
+'download': fileName + '.csv',
+'target': '_blank'
+});
+</code>
+And there you have it! This is how I create a custom CSV from a datatable. I hope this helps you in your endeavors!</li>
+</ol>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Lori Becker</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-12-16T09:59:05-05:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/csv/'>csv,</a>, <a class='category' href='/blog/categories/datatables/'>datatables</a>, <a class='category' href='/blog/categories/how-to/'>how-to,</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://LCBecker.github.io/blog/2016/12/16/how-to-create-custom-csvs-from-jquery-datatables/" data-via="" data-counturl="http://LCBecker.github.io/blog/2016/12/16/how-to-create-custom-csvs-from-jquery-datatables/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2016/06/29/the-right-stuff/" title="Previous Post: The Right Stuff">&laquo; The Right Stuff</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/12/16/how-to-create-custom-csvs-from-jquery-datatables/">How to Create Custom CSVs From jQuery Datatables</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/06/29/the-right-stuff/">The Right Stuff</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/05/25/what-it-means-to-be-intech/">What It Means to Be in Tech</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/05/19/a-change-in-scenery/">A Change in Scenery</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/02/24/the-kinesis-freestyle2/">The Kinesis FreeStyle2</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Lori Becker -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'fromshakespearetojava';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://LCBecker.github.io/blog/2016/12/16/how-to-create-custom-csvs-from-jquery-datatables/';
+        var disqus_url = 'http://LCBecker.github.io/blog/2016/12/16/how-to-create-custom-csvs-from-jquery-datatables/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
