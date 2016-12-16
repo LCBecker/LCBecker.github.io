@@ -15,13 +15,15 @@ It sounds simple enough. We use jQuery Datatables to generate most of the tables
 
 This is when you need to generate a custom CSV from your datatable. Here's the process:
 
-1. Create an export button near your datatable. Simple enough.
-2. Next, you need to get the raw data. There are 2 ways to do this, depending on your situation. If there's no pagination and all of your data is contained in the datatable, you can simply do:
+* Create an export button near your datatable. Simple enough.
+* Next, you need to get the raw data. There are 2 ways to do this, depending on your situation. If there's no pagination and all of your data is contained in the datatable, you can simply do:
+
 ```
 var dt = $("#idOfMyDatatable").DataTable();
 var data = dt.rows().data();
 ```
 If you're using pagination and need to retrieve all data, you can make an ajax request to your backend, probably to the same function you use to populate your datatable in the first place, but you can update it to retrieve all data by setting the `iDisplayLength` value to the `recordsDisplay` value. That's the total number of values in the table (The 100 in 'Viewing 1-10 of 100'):
+
 ```
 var dt = $("#idOfMyDatatable").DataTable();
 dt.on('init.dt', function(e) {
@@ -36,13 +38,16 @@ dt.on('init.dt', function(e) {
     });
 });
 ```
-3. So, once we have our data, we can begin to craft our CSV file. We'll need to set up our basics like the headers and some basic file information. We'll also need to create an array, where each value is a line in the CSV.
+
+* So, once we have our data, we can begin to craft our CSV file. We'll need to set up our basics like the headers and some basic file information. We'll also need to create an array, where each value is a line in the CSV.
+
 ```
 var headings = ["Heading1", "Heading2", "Heading3"];
 var lineArray = [];
 lineArray.push("data:application/csv;charset=utf-8," + headings);
 ```
-4. Adding your actual data depends on how you retrieved your data in step 2.
+
+* Adding your actual data depends on how you retrieved your data in step 2.
   * If you're getting your data from the datatable itself, ie: `var data = dt.rows().data();`, your data will look a little something like
 
   ```
@@ -78,7 +83,8 @@ lineArray.push("data:application/csv;charset=utf-8," + headings);
     }
     ```
 
-5. Our last step is to finalize our CSV content and hook up our export button to actually provide the ability to download the CSV. No matter how you got your data, you should have an array `var lineArray` that contains comma separated strings. We need to convert that to being just one string, with each string-row ending in a new line.
+* Our last step is to finalize our CSV content and hook up our export button to actually provide the ability to download the CSV. No matter how you got your data, you should have an array `var lineArray` that contains comma separated strings. We need to convert that to being just one string, with each string-row ending in a new line.
+
 ```
 var csvContent = lineArray.join("\n");
 var fileName = 'MyDatatbleCsv';
