@@ -4,7 +4,7 @@
   <title><![CDATA[From Shakespeare to Java]]></title>
   <link href="http://LCBecker.github.io/atom.xml" rel="self"/>
   <link href="http://LCBecker.github.io/"/>
-  <updated>2016-12-16T12:41:20-05:00</updated>
+  <updated>2017-03-05T17:48:57-05:00</updated>
   <id>http://LCBecker.github.io/</id>
   <author>
     <name><![CDATA[Lori Becker]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[I Speak Developer]]></title>
+    <link href="http://LCBecker.github.io/blog/2017/03/02/i-speak-developer/"/>
+    <updated>2017-03-02T21:46:45-05:00</updated>
+    <id>http://LCBecker.github.io/blog/2017/03/02/i-speak-developer</id>
+    <content type="html"><![CDATA[<p>I remember the days before I was a software engineer and I lived in a world where Python was a snake and not a programming language, where Java was just another word for coffee, and Cassandra was a person from Greek mythology. Most people live in my former world. If you talk to non-technical people about what you do - I mean, what you REALLY DO, no holds barred, describing all the tools and languages and processes you use every day - they will think you are speaking Klingon.</p>
+
+<p>One of my coworkers set up a meeting with me next week because they wanted to better understand git branching and how it affects QA and production deployments. It took me a few months on the job after graduation to truly understand git. Local vs. remote, pushing, pulling, merging, branching, commits - it&rsquo;s confusing to most beginners. So, I feel like I really need to prepare for this meeting and think about how to explain aspects of git to someone on the outside. I thought that coming from a teaching background would help me describe to my non-technical coworkers about my daily challenges. Now I realize I am entrenched in tech-speak. I&rsquo;ve become the very person I didn&rsquo;t understand before starting my computer science degree.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to Create Custom CSVs From jQuery Datatables]]></title>
@@ -823,29 +834,6 @@ It&rsquo;s been a very long time since I&rsquo;ve updated this blog, so let me f
 <h3>The Takeaway</h3>
 
 <p>All developers should be aware of key Agile techniques and incorporate them into how they code. Not testing or refactoring your code is a very, VERY bad idea. Those 60+ hour weeks might very well be the result of poor coding practices, which, as <em>Business Insider</em> explains, may be driving you and your co-workers <a href="http://www.businessinsider.com/syndromes-drive-coders-crazy-2014-3">crazy</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Language Wars]]></title>
-    <link href="http://LCBecker.github.io/blog/2014/09/17/the-language-wars/"/>
-    <updated>2014-09-17T09:05:46-04:00</updated>
-    <id>http://LCBecker.github.io/blog/2014/09/17/the-language-wars</id>
-    <content type="html"><![CDATA[<p><img class="left" src="http://LCBecker.github.io/images/language.jpg" title="programming language cartoon" alt="programming language cartoon"></p>
-
-<h6>Essays - a cartoon by <a href="https://www.flickr.com/photos/markuz/5476354835/in/photolist-9kVKuX-DPuZr-cyzFqh-dgBX5h-dcn2NC-bk3mFf-2CcMj-73wwvy-8HqhkF-nPej2Z-4auAXX-4auvCv-4aux7x-4auEfe-4auxDT-4auM64-4auQa8-4auNpa-nuV3GR-nMpVwR-nuX4Pf-nuVMGg-nuX4SS-nuVMg6-nPcfYZ-nuY9BP-nPeCHB-nuV58X-nMpVpr-nMpURT-nMn1JE-nuV42D-nuXEX3-nKp6ch-nuVMT8-nMePeN-nuVMap-nKngMu-nPeCEa-nuXyMe-nKnid5-nPeCYX-nuV3Mv-nMn2eC-nuXEoY-nuY9yH-nKpFhS-nMpnLL-nKnhPj-nuXyh6">Marco Antonio Islas Cruz</a></h6>
-
-<p>There are <a href="http://en.wikipedia.org/wiki/Lists_of_programming_languages">thousands</a> of programming languages. Each language has its strengths and weaknesses, its own special qualities, and some have very specific purposes.</p>
-
-<p>After reading <a href="http://www.itworld.com/career/436261/college-students-learning-cobol-make-more-money">this</a> article about a Texas university&rsquo;s graduates getting a $10,000 bump in salary for taking an elective course on COBOL, I started thinking about what programming languages <em>really</em> matter in industry and beyond.</p>
-
-<p>According to <a href="http://spectrum.ieee.org/computing/software/top-10-programming-languages">IEEE</a>, Java, C, and C++ are the top 3 programming languages because they are widely used in web, mobile, desktop and embedded development. Python, which has a steadily growing fanbase, is only in 5th place, probably due to the fact that it&rsquo;s not used for mobile or embedded development. This is interesting, considering <a href="http://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-us-universities/fulltext">Python</a> is currently the most popular language being taught in introductory computer science courses. Does this mean more companies will adapt Python as their primary development language as the graduates look for jobs related to their &ldquo;language of choice&rdquo;?</p>
-
-<p>I put &ldquo;language of choice&rdquo; in quotes for a reason (I&rsquo;m not in this group of <a href="http://www.unnecessaryquotes.com/">people</a>). My hunch is that the level of proficiency of a programming language determines the developer&rsquo;s preference for that language. If they don&rsquo;t know it well, it&rsquo;s not going to be their favorite, even if it might be better for the project at hand. (As it turns out, this hunch is seemingly <a href="http://www.reddit.com/r/learnprogramming/comments/2gos1e/is_your_preferred_programming_language_the_same/">incorrect</a>. Thank you, Reddit responders.)</p>
-
-<p>That leads me to believe that out of the thousands of programming languages currently out there, the ones most utilized in industry may not be the optimal ones. They&rsquo;re just the standard. Java might be the dominant language, but some other language out there might be more efficient and easier to use to do the same tasks! Those other languages are just not well-known by a significant number of people. And of course, companies are notoriously resistant to <a href="http://thenextweb.com/dd/2014/02/27/web-2-0-languages-david-hasselhoff-common/">change</a>.</p>
-
-<p>In the meanwhile, developers will continue to argue about the <em>superior</em> programming language(Python! No, Java! No, Go! No, C#!). They will have conferences championing the accomplishments of their language and what&rsquo;s been created with them. But remember, there are a lot of programming languages out there just waiting to be discovered, learned, and used to build really amazing things! They may just become one of the standard programming languages of the future&hellip;</p>
 ]]></content>
   </entry>
   
