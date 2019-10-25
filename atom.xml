@@ -4,7 +4,7 @@
   <title><![CDATA[From Shakespeare to Java]]></title>
   <link href="http://LCBecker.github.io/atom.xml" rel="self"/>
   <link href="http://LCBecker.github.io/"/>
-  <updated>2019-10-24T21:35:48-04:00</updated>
+  <updated>2019-10-24T21:37:29-04:00</updated>
   <id>http://LCBecker.github.io/</id>
   <author>
     <name><![CDATA[Lori Becker]]></name>
@@ -37,26 +37,27 @@ render() {
 }
 </code></pre>
 
-<p>This solution is okay if we&rsquo;re creating a really simple React application. But for an more complicated UI, this isn&rsquo;t going to cut it. Maybe we need to set props on <code>Museum</code> and a totally different set of props on <code>Skyscraper</code>. Now what? Maybe you could convert each case into an object like so:
-&#8220;`javascript
-case &ldquo;museum&rdquo;: return {
+<p>This solution is okay if we&rsquo;re creating a really simple React application. But for an more complicated UI, this isn&rsquo;t going to cut it. Maybe we need to set props on <code>Museum</code> and a totally different set of props on <code>Skyscraper</code>. Now what? Maybe you could convert each case into an object like so:</p>
+
+<pre><code class="javascript">case "museum": return {
   comp: Museum,
   props: {
     this.state.building.museumType,
     this.state.building.museumRanking
   }
-}</p>
+}
 
-<p>&hellip;</p>
+...
 
-<p>render() {
+render() {
   const building = this.getComponent(this.state.buildingType);
   const BuildingComponent = building.comp;
   const buildingProps = building.props;
-  return <BuildingComponent {...buildingProps} />;
+  return &lt;BuildingComponent {...buildingProps} /&gt;;
 }
-&#8220;`
-Now just imagine having to do this for 10 types of buildings. That switch statement would become hundreds of lines in mere seconds! This may be the simplest solution, but it&rsquo;s certainly ugly!</p>
+</code></pre>
+
+<p>Now just imagine having to do this for 10 types of buildings. That switch statement would become hundreds of lines in mere seconds! This may be the simplest solution, but it&rsquo;s certainly ugly!</p>
 
 <p>Enter React Router. React Router shows and hides content based on, you guessed it, routes. Usually, React Router is used for single page applications. You can show routes like /new, /edit, or /delete without actually having the entire application refresh. Instead, it simply shows the <code>New</code> component when the /new route is triggered.</p>
 
@@ -78,19 +79,19 @@ Now just imagine having to do this for 10 types of buildings. That switch statem
 
 <p>But wait. How do we actually switch routes? <code>Link</code> is the obvious component to use that comes built into React Router. You can look at their documentation for more information on that. In this example, we have some navigation tabs that calls an onClick method defined in the same component as our <code>Router</code>. How do we get the onClick method to change the route?</p>
 
-<p>Step 1: Update the export default line-
-&#8220;`javascript
-import { withRouter } from &lsquo;react-router-dom&rsquo;;</p>
+<p>Step 1: Update the export default line-</p>
 
-<p>class MainBuilding extends React.Component {
-  &hellip;
+<pre><code class="javascript">import { withRouter } from 'react-router-dom';
+
+class MainBuilding extends React.Component {
+  ...
 }
 export default withRouter(MainBuilding);
-&#8220;`</p>
+</code></pre>
 
-<p>Step 2: Change the route in the onClick method-
-<code>javascript
-class MainBuilding extends React.Component {
+<p>Step 2: Change the route in the onClick method-</p>
+
+<pre><code class="javascript">class MainBuilding extends React.Component {
   ...
   onTabClick(newBuildingType) {
     const newRoutePath = `/${newTab}`;
@@ -98,8 +99,9 @@ class MainBuilding extends React.Component {
     this.setState({buildingType: newBuildingType});
   }
 }
-</code>
-When we push the new route to history and update our state, our <code>render()</code> method is called and matches the new route. So, if the <code>newBuildingType</code> is &ldquo;house&rdquo;, then the component matching the route for <code>/house</code> will be displayed. Yes, you might have a lot of routes. But you can refactor this into still yet more manageable chunks, unlike a switch statement.</p>
+</code></pre>
+
+<p>When we push the new route to history and update our state, our <code>render()</code> method is called and matches the new route. So, if the <code>newBuildingType</code> is &ldquo;house&rdquo;, then the component matching the route for <code>/house</code> will be displayed. Yes, you might have a lot of routes. But you can refactor this into still yet more manageable chunks, unlike a switch statement.</p>
 
 <p>I hope this example helps you think about how to incorporate React Router into you app to better organize serving up specific components.</p>
 ]]></content>
