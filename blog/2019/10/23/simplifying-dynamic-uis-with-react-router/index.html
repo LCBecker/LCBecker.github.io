@@ -179,7 +179,7 @@ export default withRouter(MainBuilding);
 <pre><code class="javascript">class MainBuilding extends React.Component {
   ...
   onTabClick(newBuildingType) {
-    const newRoutePath = `/${newTab}`;
+    const newRoutePath = `/${newBuildingType}`;
     this.props.history.push(newRoutePath);
     this.setState({buildingType: newBuildingType});
   }

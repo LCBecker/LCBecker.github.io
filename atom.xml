@@ -4,7 +4,7 @@
   <title><![CDATA[From Shakespeare to Java]]></title>
   <link href="http://LCBecker.github.io/atom.xml" rel="self"/>
   <link href="http://LCBecker.github.io/"/>
-  <updated>2019-10-24T21:37:29-04:00</updated>
+  <updated>2019-10-24T21:50:20-04:00</updated>
   <id>http://LCBecker.github.io/</id>
   <author>
     <name><![CDATA[Lori Becker]]></name>
@@ -94,7 +94,7 @@ export default withRouter(MainBuilding);
 <pre><code class="javascript">class MainBuilding extends React.Component {
   ...
   onTabClick(newBuildingType) {
-    const newRoutePath = `/${newTab}`;
+    const newRoutePath = `/${newBuildingType}`;
     this.props.history.push(newRoutePath);
     this.setState({buildingType: newBuildingType});
   }
