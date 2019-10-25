@@ -24,7 +24,9 @@ render() {
   return <BuildingComponent />;
 }
 ```
+
 This solution is okay if we're creating a really simple React application. But for an more complicated UI, this isn't going to cut it. Maybe we need to set props on `Museum` and a totally different set of props on `Skyscraper`. Now what? Maybe you could convert each case into an object like so:
+
 ```javascript
 case "museum": return {
   comp: Museum,
@@ -43,6 +45,7 @@ render() {
   return <BuildingComponent {...buildingProps} />;
 }
 ```
+
 Now just imagine having to do this for 10 types of buildings. That switch statement would become hundreds of lines in mere seconds! This may be the simplest solution, but it's certainly ugly!
 
 Enter React Router. React Router shows and hides content based on, you guessed it, routes. Usually, React Router is used for single page applications. You can show routes like /new, /edit, or /delete without actually having the entire application refresh. Instead, it simply shows the `New` component when the /new route is triggered.
@@ -67,6 +70,7 @@ I've provided two examples of how to declare a component in a `Route`. The first
 But wait. How do we actually switch routes? `Link` is the obvious component to use that comes built into React Router. You can look at their documentation for more information on that. In this example, we have some navigation tabs that calls an onClick method defined in the same component as our `Router`. How do we get the onClick method to change the route?
 
 Step 1: Update the export default line-
+
 ```javascript
 import { withRouter } from 'react-router-dom';
 
@@ -77,6 +81,7 @@ export default withRouter(MainBuilding);
 ```
 
 Step 2: Change the route in the onClick method-
+
 ```javascript
 class MainBuilding extends React.Component {
   ...
@@ -87,6 +92,7 @@ class MainBuilding extends React.Component {
   }
 }
 ```
+
 When we push the new route to history and update our state, our `render()` method is called and matches the new route. So, if the `newBuildingType` is "house", then the component matching the route for `/house` will be displayed. Yes, you might have a lot of routes. But you can refactor this into still yet more manageable chunks, unlike a switch statement.
 
 I hope this example helps you think about how to incorporate React Router into you app to better organize serving up specific components.
