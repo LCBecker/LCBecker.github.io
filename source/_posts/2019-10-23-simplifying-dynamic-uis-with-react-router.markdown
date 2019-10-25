@@ -86,7 +86,7 @@ Step 2: Change the route in the onClick method-
 class MainBuilding extends React.Component {
   ...
   onTabClick(newBuildingType) {
-    const newRoutePath = `/${newTab}`;
+    const newRoutePath = `/${newBuildingType}`;
     this.props.history.push(newRoutePath);
     this.setState({buildingType: newBuildingType});
   }
