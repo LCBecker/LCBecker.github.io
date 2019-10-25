@@ -67,7 +67,7 @@ render() {
 
 I've provided two examples of how to declare a component in a `Route`. The first way is pretty straight forward. The `House` component does not need any props passed to it, so we can just use the component prop in `Route` and pass it the component's name. The route for /museum is a little different. In this case, we use the render prop. You always need to pass down information about the current route state - that's what `routeProps` is. But then you can append any other props that component might require. In this case, you can make small, manageable functions to return the props needed for specific components.
 
-But wait. How do we actually switch routes? `Link` is the obvious component to use that comes built into React Router. You can look at their documentation for more information on that. In this example, we have some navigation tabs that calls an onClick method defined in the same component as our `Router`. How do we get the onClick method to change the route?
+But wait. How do we actually switch routes? `Link` is the obvious component to use that comes built into React Router. You can look at [their documentation](https://reacttraining.com/react-router/web/guides/primary-components/navigation-or-route-changers) for more information on that. In this example, we have some navigation tabs that calls an onClick method defined in the same component as our `Router`. How do we get the onClick method to change the route?
 
 Step 1: Update the export default line-
 
